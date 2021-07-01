@@ -19,11 +19,11 @@ export default {
           videos: {
             sources: [
               {
-                src: '../../public/yo.mp4',
+                src: '',
                 type: 'video/mp4'
               },
               {
-                src: '../../public/yo.mp4',
+                src: '',
                 type: 'video/mp4'
               }
             ],

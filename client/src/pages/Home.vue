@@ -15,7 +15,7 @@
 
     <q-scroll-area horizontal class="window-height absolute-top q-pt-xl">
       <div class="row full-height no-wrap q-pt-xl q-px-md q-gutter-md">
-        <q-card style="border-radius: 24px; width: 500px; height: 90%;" clickable v-for="(modulo, index) in modulos" :key="index" @click="$router.push('/video/' + modulo.id)">
+        <q-card style="border-radius: 24px; width: 500px; height: 90%;" clickable v-for="(modulo, index) in modulos" :key="index" @click="$router.push('/modulo/' + modulo.id)">
           <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" class="full-height">
             <div class="absolute-full row">
               <div class="full-height row items-center">
