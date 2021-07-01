@@ -1,11 +1,21 @@
 
 const routes = [
   {
-    path: '/',
+    path: '/index',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '/home', component: () => import('pages/Home.vue') },
+      { path: '/video/:id', component: () => import('pages/Video.vue') }
     ]
+  },
+  { path: '/splash', component: () => import('pages/Splash.vue') },
+  {
+    path: '/',
+    redirect: '/splash'
+  },
+  {
+    path: '*',
+    redirect: '/splash'
   },
 
   // Always leave this as last one,
