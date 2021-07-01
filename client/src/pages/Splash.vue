@@ -35,7 +35,19 @@ export default {
           actividades: [
             {
               id: 1,
-              name: 'Actividad 1',
+              name: 'Ver videos'
+            },
+            {
+              id: 2,
+              name: 'Glosario'
+            },
+            {
+              id: 3,
+              name: 'Material de apoyo'
+            },
+            {
+              id: 4,
+              name: 'Realizar examen',
               preguntas: [
                 {
                   name: 'Primera',
@@ -65,6 +77,10 @@ export default {
                 }
               ],
               correcto: [2, 3, 1]
+            },
+            {
+              id: 5,
+              name: 'Ver resumen'
             }
           ]
         }
