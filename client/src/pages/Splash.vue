@@ -19,7 +19,7 @@ export default {
           videos: {
             sources: [
               {
-                src: '../../public/yo.mp4',
+                src: 'video1.mp4',
                 type: 'video/mp4'
               },
               {
@@ -29,7 +29,7 @@ export default {
             ],
             options: {
               autoplay: true,
-              volume: 0.1
+              volume: 0.6
             }
           },
           actividades: [

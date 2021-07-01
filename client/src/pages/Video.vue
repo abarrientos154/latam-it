@@ -38,7 +38,7 @@
         <q-carousel class="q-mx-xl q-mt-lg" v-model="slide" style="border-radius: 24px; height: auto;" infinite>
           <q-carousel-slide v-for="(video, index) in modulo[0].videos.sources" :key="index" :name="index" class="q-pa-none">
             <div>
-              <my-video :sources="video" :options="modulo[0].videos.options" @input="sigiente()"/>
+              <my-video :sources="[video]" :options="modulo[0].videos.options" @input="sigiente()"/>
             </div>
           </q-carousel-slide>
         </q-carousel>
