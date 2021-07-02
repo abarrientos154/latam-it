@@ -55,7 +55,13 @@
     </q-dialog>
     <q-dialog v-model="verPDF" persistent>
       <q-card style="border-radius: 24px;">
-        <pdf :src="pdfName" style="width: 100%"></pdf>
+        <pdf
+          v-for="i in pagsPDF"
+          :key="i"
+          :src="pdfName"
+          :page="i"
+          style="display: inline-block; width: 100%"
+        ></pdf>
         <q-card-actions class="q-pb-lg" align="center">
           <q-btn class="q-pa-sm text-h6" color="primary" label="Cerrar" v-close-popup no-caps style="width: 50%; border-radius: 10px;"/>
         </q-card-actions>
@@ -77,8 +83,9 @@ export default {
       id: '',
       modulo: [],
       vds: true,
-      verPDF: false,
-      pdfName: '',
+      verPDF: true,
+      pagsPDF: 0,
+      pdfName: undefined,
       slide: 1
     }
   },
@@ -90,6 +97,14 @@ export default {
     }
   },
   methods: {
+    seePDF () {
+      const loadingTask = pdf.createLoadingTask('Resumen1.pdf')
+      this.pdfName = loadingTask
+      this.pdfName.promise.then(pdf => {
+        // console.log(pdf)
+        this.pagsPDF = pdf.numPages
+      })
+    },
     sigiente () {
       this.slide++
     },
