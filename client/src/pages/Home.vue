@@ -7,12 +7,12 @@
       </div>
     </q-header>
 
-    <q-drawer side="right" v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-1">
+   <!--  <q-drawer side="right" v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-1">
       <q-list>
         <q-item-label header class="text-h6 text-grey-8">Lista</q-item-label>
       </q-list>
     </q-drawer>
-
+ -->
     <q-scroll-area horizontal class="window-height absolute-top">
       <div class="row full-height no-wrap q-px-lg q-gutter-md" style="padding-top: 150px;">
         <q-card style="border-radius: 24px; width: 700px; height: 90%;" clickable v-for="(modulo, index) in modulos" :key="index" @click="$router.push('/modulo/' + modulo.id)">

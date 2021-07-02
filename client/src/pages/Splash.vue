@@ -1,6 +1,9 @@
 <template>
-  <div class="window-height window-width column bg-primary">
-    <div class="absolute-center full-width text-center text-bold text-white text-h1">Latam It...</div>
+  <div class="full-window column">
+    <div class="absolute-center full-width">
+      <q-img src="latam-color.png" class="full-height">
+      </q-img>
+    </div>
   </div>
 </template>
 
@@ -42,7 +45,8 @@ export default {
             {
               id: 2,
               name: 'Glosario',
-              src: 'glosario.png'
+              src: 'glosario.png',
+              pdf: 'Glosario1.pdf'
             },
             {
               id: 3,
@@ -126,6 +130,12 @@ export default {
             {
               id: 5,
               name: 'Ver resumen',
+              src: 'resumen.png',
+              pdf: 'Resumen1.pdf'
+            },
+            {
+              id: 6,
+              name: 'Ir al Menu',
               src: 'resumen.png'
             }
           ]

@@ -24,7 +24,7 @@
     </q-header>
     <q-scroll-area horizontal class="window-height absolute-top">
       <div class="row full-height items-center no-wrap q-px-md q-gutter-md" style="padding-top: 275px;">
-        <q-card style="border-radius: 10px; width: 350px; height: 90%;" clickable v-for="(actividad, index) in modulo[0].actividades" @click="actividad.id === 1 ? verVideos() : $router.push('/actividad/' + modulo[0].id + '/' + actividad.id)" :key="index">
+        <q-card style="border-radius: 10px; width: 350px; height: 90%;" clickable v-for="(actividad, index) in modulo[0].actividades" @click="ejecutarAccion(actividad, modulo[0].id)" :key="index">
           <q-img :src="actividad.src" class="full-height">
             <div class="absolute-full">
               <div class="absolute-bottom">
@@ -97,12 +97,30 @@ export default {
     }
   },
   methods: {
-    seePDF () {
-      const loadingTask = pdf.createLoadingTask('Resumen1.pdf')
+    ejecutarAccion (op, moduloid) {
+      if (op.id === 1) {
+        this.verVideos()
+      }
+      if (op.id === 2) {
+        this.seePDF(op.pdf)
+      }
+      if (op.id === 4) {
+        this.$router.push('/actividad/' + moduloid + '/' + op.id)
+      }
+      if (op.id === 5) {
+        this.seePDF(op.pdf)
+      }
+      if (op.id === 6) {
+        this.$router.push('/home')
+      }
+    },
+    seePDF (url) {
+      const loadingTask = pdf.createLoadingTask(url)
       this.pdfName = loadingTask
       this.pdfName.promise.then(pdf => {
         // console.log(pdf)
         this.pagsPDF = pdf.numPages
+        this.verPDF = true
       })
     },
     sigiente () {
