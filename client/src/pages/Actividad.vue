@@ -24,34 +24,24 @@
         <q-carousel class="col" v-model="slide" infinite>
           <q-carousel-slide v-for="(hoja, index) in actividad[0].hojas" :key="index" :name="index + 1">
             <div class="row full-height">
-              <div class="col-3" style="min-width: 300px;">
-                <draggable class="column items-center" style="height: 100%;" v-model="hoja.respuestas" group="people">
-                  <div class="col row items-center" v-for="element in hoja.respuestas" :key="element.id">
-                    <div class="text-h5 text-white text-bold text-center bg-primary q-pa-md ellipsis" style="width: 300px; border-radius: 10px;">
-                      {{element.name}}
-                      <q-tooltip class="bg-secondary" :offset="[10, -50]">
-                        <div class="text-h6" style="width: 250px">{{element.name}}</div>
-                      </q-tooltip>
-                    </div>
+              <div style="min-width: 300px;">
+                <draggable class="column items-center" style="height: 100%;" v-model="hoja.preguntas" group="people" @input="res.push">
+                  <div class="col row items-center full-width" v-for="(element, index) in hoja.preguntas" :key="index">
+                    <div class="text-h5 text-white full-width text-bold bg-primary q-pa-md" style="border-radius: 10px;">{{element.name}}</div>
                   </div>
                 </draggable>
               </div>
-              <div class="col q-px-lg column items-center no-wrap" style="min-width: 500px;">
-                <div class="col row items-center full-width" v-for="element in hoja.preguntas" :key="element.id">
-                  <div class="text-h5 text-white text-bold full-width text-center row justify-between items-center bg-primary q-pa-xs">
-                    <div class="bg-white" style="height: 75px; width: 300px;">
-                      <draggable class="column items-center text-black" style="height: 100%; width: 100%;" v-model="respuestas[element.id]" group="people">{{'Arrastra aqui'}}</draggable>
-                    </div>
-                    <div class="q-pr-lg">{{element.name}}</div>
-                  </div>
+              <div class="col q-pl-lg column items-center">
+                <div class="col row items-center full-width" v-for="element in hoja.respuestas" :key="element.id">
+                  <div :class="val[element.id - 1] ? 'text-h5 text-white text-bold full-width items-center bg-positive q-pa-md' : val[element.id - 1] === false ? 'text-h5 text-white text-bold full-width items-center bg-negative q-pa-md' : 'text-h5 text-white text-bold full-width items-center bg-primary q-pa-md'" style="border-radius: 10px;">{{element.name}}</div>
                 </div>
-              </div>
-              <div class="row items-end justify-center">
-                <q-btn class="q-pa-sm text-h6" color="primary" label="Validar" @click="validarRes()" no-caps style="width: 250px; border-radius: 10px;"/>
               </div>
             </div>
           </q-carousel-slide>
         </q-carousel>
+        <div class="col2 q-pb-md q-px-md column items-center justify-center">
+          <q-btn class="q-pa-sm text-h5 text-bold" color="primary" label="Validar" @click="validarRes()" no-caps style="width: 250px; border-radius: 10px;"/>
+        </div>
       </div>
 
       <div v-else-if="actividad[0].id === 5"></div>
@@ -72,7 +62,10 @@ export default {
       slide: 1,
       modulo: [],
       actividad: [],
-      respuestas: []
+      hojas: [],
+      val: [],
+      valError: [],
+      res: []
     }
   },
   mounted () {
@@ -85,12 +78,27 @@ export default {
         this.actividad_id = this.$route.params.id
         this.modulo = JSON.parse(localStorage.getItem('modulos')).filter(v => v.id.toString() === this.modulo_id)
         this.actividad = this.modulo[0].actividades.filter(v => v.id.toString() === this.actividad_id)
+        this.hojas = this.actividad[0].hojas
         console.log(this.modulo)
         console.log(this.actividad)
       }
     },
     validarRes () {
-      console.log(this.respuestas)
+      for (var i = 0; i < this.hojas[this.slide - 1].correcto; i++) {
+        if (this.hojas[this.slide - 1].preguntas[i].id === this.correcto[i]) {
+          this.val.push(true)
+        } else {
+          this.val.push(false)
+        }
+      }
+      console.log(this.val)
+      this.timer = setInterval(this.continuar, 4000)
+    },
+    continuar () {
+      this.valError = this.val.filter(v => v === false)
+      if (this.slide < this.actividad[0].hojas.length && !this.valError.length) {
+        this.slide++
+      }
     }
   }
 }
