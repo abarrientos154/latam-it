@@ -83,7 +83,7 @@ export default {
       id: '',
       modulo: [],
       vds: true,
-      verPDF: true,
+      verPDF: false,
       pagsPDF: 0,
       pdfName: undefined,
       slide: 1
