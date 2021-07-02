@@ -58,9 +58,12 @@
         <div class="col2 q-pb-md q-px-md column items-center justify-center">
           <q-btn class="q-pa-sm text-h5 text-bold" color="primary" label="Validar" @click="validarRes()" no-caps style="width: 250px; border-radius: 10px;"/>
         </div>
-        <q-dialog v-model="verVal">
-          <q-card v-if="error" style="border-radius: 24px; width: 85%; height: 85%;" clickable>
-            <q-img src="Mano.png" class="full-height"/>
+        <q-dialog v-model="verVal" persistent>
+          <q-card v-if="error" style="border-radius: 24px; width: 85%; height: 85%;" class="column">
+            <q-img src="Mano.png" class="col"/>
+            <q-card-actions class="col2 q-pb-lg" align="center">
+              <q-btn class="q-pa-sm text-h6" color="primary" label="Reintentar" @click="$router.go(0)" no-caps style="width: 50%; border-radius: 10px;"/>
+            </q-card-actions>
           </q-card>
           <q-card v-else style="border-radius: 24px; width: 85%; height: 85%;" clickable>
             <q-img src="Mano.png" class="full-height"/>
@@ -91,7 +94,10 @@ export default {
       verVal: false,
       error: false,
       valError: [],
-      res: []
+      res: [],
+      timer: '',
+      timer2: '',
+      timer3: ''
     }
   },
   mounted () {
@@ -118,21 +124,40 @@ export default {
         }
       }
       console.log(this.val)
-      this.timer = setInterval(this.continuar, 4000)
+      this.timer = setInterval(this.continuar, 3000)
     },
     continuar () {
       this.valError = this.val.filter(v => v === false)
       if (this.slide < this.actividad[0].hojas.length && !this.valError.length) {
         this.verVal = true
         this.error = false
-        this.slide++
+        this.timer2 = setInterval(this.siguiente, 4000)
+        clearInterval(this.timer)
       } else if (this.slide < this.actividad[0].hojas.length) {
         this.verVal = true
         this.error = true
+        clearInterval(this.timer)
+      } else if (this.slide === this.actividad[0].hojas.length) {
+        this.verVal = true
+        this.error = false
+        this.timer3 = setInterval(this.finalizar, 4000)
+        clearInterval(this.timer)
       }
     },
     selecPre (pre) {
       this.res = pre
+    },
+    siguiente () {
+      this.slide++
+      this.verVal = false
+      this.error = false
+      this.res = []
+      this.val = []
+      clearInterval(this.timer2)
+    },
+    finalizar () {
+      this.$router.go(-1)
+      clearInterval(this.timer3)
     }
   }
 }
