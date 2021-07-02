@@ -3,7 +3,23 @@
     <div>
       <div v-if="actividad[0].id === 2"></div>
 
-      <div v-else-if="actividad[0].id === 3"></div>
+      <div v-else-if="actividad[0].id === 3" class="window-height column">
+        <div class="column items-center q-pt-md q-px-md">
+          <q-card style="border-radius: 24px; width: 100%; height: 200px;">
+            <q-img :src="actividad[0].src" class="full-height">
+              <div class="absolute-full row">
+                <div>
+                  <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
+                </div>
+                <div class="column items-end absolute-bottom q-pa-lg">
+                  <div class="text-h3 text-bold">{{actividad[0].titulo}}</div>
+                  <div class="text-h5 text-right" style="width: 700px;">{{actividad[0].hojas[slide - 1].descriccion}}</div>
+                </div>
+              </div>
+            </q-img>
+          </q-card>
+        </div>
+      </div>
 
       <div v-else-if="actividad[0].id === 4" class="window-height column">
         <div class="column items-center q-pt-md q-px-md">
@@ -22,10 +38,10 @@
           </q-card>
         </div>
         <q-carousel class="col" v-model="slide" infinite>
-          <q-carousel-slide v-for="(hoja, index) in actividad[0].hojas" :key="index" :name="index + 1">
+          <q-carousel-slide v-for="(hoja, index) in hojas" :key="index" :name="index + 1">
             <div class="row full-height">
               <div style="min-width: 300px;">
-                <draggable class="column items-center" style="height: 100%;" v-model="hoja.preguntas" group="people" @input="res.push">
+                <draggable class="column items-center" style="height: 100%;" v-model="hoja.preguntas" group="people" @input="selecPre(hoja.preguntas)">
                   <div class="col row items-center full-width" v-for="(element, index) in hoja.preguntas" :key="index">
                     <div class="text-h5 text-white full-width text-bold bg-primary q-pa-md" style="border-radius: 10px;">{{element.name}}</div>
                   </div>
@@ -42,6 +58,14 @@
         <div class="col2 q-pb-md q-px-md column items-center justify-center">
           <q-btn class="q-pa-sm text-h5 text-bold" color="primary" label="Validar" @click="validarRes()" no-caps style="width: 250px; border-radius: 10px;"/>
         </div>
+        <q-dialog v-model="verVal">
+          <q-card v-if="error" style="border-radius: 24px; width: 85%; height: 85%;" clickable>
+            <q-img src="Mano.png" class="full-height"/>
+          </q-card>
+          <q-card v-else style="border-radius: 24px; width: 85%; height: 85%;" clickable>
+            <q-img src="Mano.png" class="full-height"/>
+          </q-card>
+        </q-dialog>
       </div>
 
       <div v-else-if="actividad[0].id === 5"></div>
@@ -64,6 +88,8 @@ export default {
       actividad: [],
       hojas: [],
       val: [],
+      verVal: false,
+      error: false,
       valError: [],
       res: []
     }
@@ -84,8 +110,8 @@ export default {
       }
     },
     validarRes () {
-      for (var i = 0; i < this.hojas[this.slide - 1].correcto; i++) {
-        if (this.hojas[this.slide - 1].preguntas[i].id === this.correcto[i]) {
+      for (var i = 0; i < this.hojas[this.slide - 1].correcto.length; i++) {
+        if (this.res[i].id === this.hojas[this.slide - 1].correcto[i]) {
           this.val.push(true)
         } else {
           this.val.push(false)
@@ -97,8 +123,16 @@ export default {
     continuar () {
       this.valError = this.val.filter(v => v === false)
       if (this.slide < this.actividad[0].hojas.length && !this.valError.length) {
+        this.verVal = true
+        this.error = false
         this.slide++
+      } else if (this.slide < this.actividad[0].hojas.length) {
+        this.verVal = true
+        this.error = true
       }
+    },
+    selecPre (pre) {
+      this.res = pre
     }
   }
 }
