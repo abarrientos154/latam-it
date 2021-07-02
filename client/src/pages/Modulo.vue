@@ -3,7 +3,7 @@
     <q-header class="bg-white">
       <div class="column items-center q-pt-md q-px-md">
         <q-card style="border-radius: 24px; width: 100%; height: 200px;">
-          <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" class="full-height">
+          <q-img :src="modulo[0].src" class="full-height">
             <div class="absolute-full row">
               <div>
                 <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
@@ -25,7 +25,7 @@
     <q-scroll-area horizontal class="window-height absolute-top">
       <div class="row full-height items-center no-wrap q-px-md q-gutter-md" style="padding-top: 275px;">
         <q-card style="border-radius: 10px; width: 350px; height: 90%;" clickable v-for="(actividad, index) in modulo[0].actividades" @click="actividad.id === 1 ? verVideos() : $router.push('/actividad/' + modulo[0].id + '/' + actividad.id)" :key="index">
-          <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" class="full-height">
+          <q-img :src="actividad.src" class="full-height">
             <div class="absolute-full">
               <div class="absolute-bottom">
                 <div class="text-h4 text-bold text-center q-py-md">{{actividad.name}}</div>

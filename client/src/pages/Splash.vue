@@ -14,6 +14,7 @@ export default {
         {
           id: 1,
           name: 'Módulo 01',
+          src: 'modulo1.png',
           titulo: '',
           descriccion: '',
           videos: {
@@ -35,19 +36,23 @@ export default {
           actividades: [
             {
               id: 1,
-              name: 'Ver videos'
+              name: 'Ver videos',
+              src: 'ver video.png'
             },
             {
               id: 2,
-              name: 'Glosario'
+              name: 'Glosario',
+              src: 'glosario.png'
             },
             {
               id: 3,
-              name: 'Material de apoyo'
+              name: 'Material de apoyo',
+              src: 'material del apoyo.png'
             },
             {
               id: 4,
               name: 'Realizar examen',
+              src: 'realizar examen.png',
               titulo: 'Liderazgo y Gestión',
               hojas: [
                 {
@@ -120,13 +125,15 @@ export default {
             },
             {
               id: 5,
-              name: 'Ver resumen'
+              name: 'Ver resumen',
+              src: 'resumen.png'
             }
           ]
         },
         {
           id: 2,
           name: 'Módulo 02',
+          src: 'modulo2.png',
           titulo: '',
           descriccion: '',
           videos: {
@@ -148,19 +155,23 @@ export default {
           actividades: [
             {
               id: 1,
-              name: 'Ver videos'
+              name: 'Ver videos',
+              src: 'ver video.png'
             },
             {
               id: 2,
-              name: 'Glosario'
+              name: 'Glosario',
+              src: 'glosario.png'
             },
             {
               id: 3,
-              name: 'Material de apoyo'
+              name: 'Material de apoyo',
+              src: 'material del apoyo.png'
             },
             {
               id: 4,
               name: 'Realizar examen',
+              src: 'realizar examen.png',
               titulo: 'Modelos de Liderazgo',
               hojas: [
                 {
@@ -233,13 +244,15 @@ export default {
             },
             {
               id: 5,
-              name: 'Ver resumen'
+              name: 'Ver resumen',
+              src: 'resumen.png'
             }
           ]
         },
         {
           id: 3,
           name: 'Módulo 03',
+          src: 'modulo2.png',
           titulo: '',
           descriccion: '',
           videos: {
@@ -261,19 +274,23 @@ export default {
           actividades: [
             {
               id: 1,
-              name: 'Ver videos'
+              name: 'Ver videos',
+              src: 'ver video.png'
             },
             {
               id: 2,
-              name: 'Glosario'
+              name: 'Glosario',
+              src: 'glosario.png'
             },
             {
               id: 3,
-              name: 'Material de apoyo'
+              name: 'Material de apoyo',
+              src: 'material del apoyo.png'
             },
             {
               id: 4,
               name: 'Realizar examen',
+              src: 'realizar examen.png',
               titulo: 'Planificar, Delegar y Coaching',
               hojas: [
                 {
@@ -346,7 +363,8 @@ export default {
             },
             {
               id: 5,
-              name: 'Ver resumen'
+              name: 'Ver resumen',
+              src: 'resumen.png'
             }
           ]
         }

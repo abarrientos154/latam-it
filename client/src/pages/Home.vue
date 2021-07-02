@@ -16,7 +16,7 @@
     <q-scroll-area horizontal class="window-height absolute-top">
       <div class="row full-height no-wrap q-px-lg q-gutter-md" style="padding-top: 150px;">
         <q-card style="border-radius: 24px; width: 700px; height: 90%;" clickable v-for="(modulo, index) in modulos" :key="index" @click="$router.push('/modulo/' + modulo.id)">
-          <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" class="full-height">
+          <q-img :src="modulo.src" class="full-height">
             <div class="absolute-full row">
               <div class="full-height row items-center">
                 <div class="text-h1 text-bold" style="transform: rotate(-90deg); margin-left: -200px">{{modulo.name.toUpperCase()}}</div>
@@ -37,7 +37,7 @@
     </div>
     <q-dialog v-model="info">
       <q-card style="border-radius: 24px; width: 85%; height: 85%;" clickable>
-        <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" class="full-height"/>
+        <q-img src="Mano.png" class="full-height"/>
       </q-card>
     </q-dialog>
   </div>
