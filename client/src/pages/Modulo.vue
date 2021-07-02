@@ -53,20 +53,32 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
+    <q-dialog v-model="verPDF" persistent>
+      <q-card style="border-radius: 24px;">
+        <pdf :src="pdfName" style="width: 100%"></pdf>
+        <q-card-actions class="q-pb-lg" align="center">
+          <q-btn class="q-pa-sm text-h6" color="primary" label="Cerrar" v-close-popup no-caps style="width: 50%; border-radius: 10px;"/>
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
 <script>
 import myVideo from 'vue-video'
+import pdf from 'vue-pdf'
 export default {
   components: {
-    myVideo
+    myVideo,
+    pdf
   },
   data () {
     return {
       id: '',
       modulo: [],
       vds: true,
+      verPDF: false,
+      pdfName: '',
       slide: 1
     }
   },
