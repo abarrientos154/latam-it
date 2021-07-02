@@ -42,7 +42,7 @@
             <div class="row full-height">
               <div style="min-width: 300px;">
                 <draggable class="column items-center" style="height: 100%;" v-model="hoja.preguntas" group="people" @input="selecPre(hoja.preguntas)">
-                  <div class="col row items-center full-width" v-for="(element, index) in hoja.preguntas" :key="index">
+                  <div class="col row items-center full-width" v-for="(element, index) in hoja.preguntas" :key="index" style="max-width: 400px;">
                     <div class="text-h5 text-white full-width text-bold bg-primary q-pa-md" style="border-radius: 10px;">{{element.name}}</div>
                   </div>
                 </draggable>
@@ -133,14 +133,18 @@ export default {
         this.error = false
         this.timer2 = setInterval(this.siguiente, 4000)
         clearInterval(this.timer)
+      } else if (this.slide === this.actividad[0].hojas.length && !this.valError.length) {
+        this.verVal = true
+        this.error = false
+        this.timer3 = setInterval(this.finalizar, 4000)
+        clearInterval(this.timer)
       } else if (this.slide < this.actividad[0].hojas.length) {
         this.verVal = true
         this.error = true
         clearInterval(this.timer)
       } else if (this.slide === this.actividad[0].hojas.length) {
         this.verVal = true
-        this.error = false
-        this.timer3 = setInterval(this.finalizar, 4000)
+        this.error = true
         clearInterval(this.timer)
       }
     },
