@@ -19,17 +19,17 @@ export default {
           videos: {
             sources: [
               [{
-                src: 'yo.mp4',
+                src: '.mp4',
                 type: 'video/mp4'
               }],
               [{
-                src: 'yo.mp4',
+                src: '.mp4',
                 type: 'video/mp4'
               }]
             ],
             options: {
               autoplay: true,
-              volume: 0.1
+              volume: 0.6
             }
           },
           actividades: [
@@ -132,11 +132,11 @@ export default {
           videos: {
             sources: [
               [{
-                src: 'yo.mp4',
+                src: '.mp4',
                 type: 'video/mp4'
               }],
               [{
-                src: 'yo.mp4',
+                src: '.mp4',
                 type: 'video/mp4'
               }]
             ],
@@ -245,11 +245,11 @@ export default {
           videos: {
             sources: [
               [{
-                src: 'yo.mp4',
+                src: '.mp4',
                 type: 'video/mp4'
               }],
               [{
-                src: 'yo.mp4',
+                src: '.mp4',
                 type: 'video/mp4'
               }]
             ],
