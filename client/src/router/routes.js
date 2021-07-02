@@ -5,7 +5,8 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '/home', component: () => import('pages/Home.vue') },
-      { path: '/modulo/:id', component: () => import('pages/Modulo.vue') }
+      { path: '/modulo/:id', component: () => import('pages/Modulo.vue') },
+      { path: '/actividad/:modulo_id/:id', component: () => import('pages/Actividad.vue') }
     ]
   },
   { path: '/splash', component: () => import('pages/Splash.vue') },
