@@ -38,17 +38,31 @@
       <div class="text-h6 text-primary">Latam IT Academícela</div>
     </div>
     <q-dialog v-model="info">
-      <q-card style="border-radius: 24px;">
-        <div class="text-center text-primary text-h4 text-bold q-pa-lg">¡Recuerda!</div>
-        <div class="column items-center justify-center">
-          <q-img src="Mano.png" style="width: 400px"/>
-        </div>
-        <div class="row justify-center">
-          <div class="text-h6 text-primary q-pr-xs text-bold">Desliza</div>
-          <div class="text-h6">hacia tu izquierda</div>
-        </div>
-        <div class="text-h6 text-center q-pb-lg">para ver todos los modulos</div>
-      </q-card>
+      <q-carousel v-model="slide" style="height: auto; border-radius: 24px;" infinite>
+        <q-carousel-slide :name="1">
+          <div class="text-center text-primary text-h4 text-bold q-pa-md">Bienvenido</div>
+          <div class="text-h6 text-center q-pb-lg">Estimado alumno o alumna, te damos la bienvenida al curso “Manejo de Herramientas para un Liderazgo Efectivo”.</div>
+          <div class="text-h6 text-center q-pb-lg">Cada uno de los módulos que verás, está compuesto por:</div>
+          <div class="text-h6 text-center q-pb-lg">Videos explicativos, textos de Resumen y Glosario de términos, Actividades Interactivas y Casos de Estudio.</div>
+          <div class="text-h6 text-center q-pb-lg">Al finalizar cada Módulo, podrás ver una evaluación y una actividad formativa con preguntas que tendrás que resolver para saber cuánto has avanzado en el curso.</div>
+          <div class="text-h6 text-center q-pb-lg">Al finalizar este curso adquirirás Habilidades de: Liderazgo a través de herramientas y Técnicas de Planificación, Organización y Gestión del trabajo en Equipo, que te ayudarán a maximizar la eficiencia del trabajo en su empresa.</div>
+          <div class="text-center text-primary text-h5 text-bold q-pa-md">Éxito!</div>
+          <q-card-actions class="col2 full-width" align="center">
+            <q-btn class="q-pa-sm text-h6" color="primary" label="Siguiente" @click="slide++" no-caps style="width: 60%; border-radius: 10px;"/>
+          </q-card-actions>
+        </q-carousel-slide>
+        <q-carousel-slide :name="2" class="q-pa-none">
+          <div class="text-center text-primary text-h4 text-bold q-pa-lg">¡Recuerda!</div>
+          <div class="column items-center justify-center">
+            <q-img src="Mano.png" style="width: 400px"/>
+          </div>
+          <div class="row justify-center">
+            <div class="text-h6 text-primary q-pr-xs text-bold">Desliza</div>
+            <div class="text-h6">hacia tu izquierda</div>
+          </div>
+          <div class="text-h6 text-center q-pb-lg">para ver todos los modulos</div>
+        </q-carousel-slide>
+      </q-carousel>
     </q-dialog>
     <q-dialog v-model="enable" persistent>
       <q-card style="border-radius: 24px;" class="column">
@@ -72,6 +86,7 @@
 export default {
   data () {
     return {
+      slide: 1,
       info: null,
       modulos: [],
       leftDrawerOpen: false,
