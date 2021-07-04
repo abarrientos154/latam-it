@@ -107,6 +107,9 @@ export default {
       if (op.id === 2) {
         this.seePDF(op.pdf)
       }
+      if (op.id === 3) {
+        this.$router.push('/actividad/' + moduloid + '/' + op.id)
+      }
       if (op.id === 4) {
         this.$router.push('/actividad/' + moduloid + '/' + op.id)
       }
