@@ -20,6 +20,8 @@ export default {
           src: 'modulo1.png',
           titulo: '',
           descriccion: '',
+          statusCa: false,
+          statusEx: false,
           videos: {
             sources: [
               [{
@@ -190,6 +192,8 @@ export default {
           src: 'modulo2.png',
           titulo: '',
           descriccion: '',
+          statusCa: false,
+          statusEx: false,
           videos: {
             sources: [
               [{
@@ -353,6 +357,8 @@ export default {
           src: 'bg.jpg',
           titulo: '',
           descriccion: '',
+          statusCa: false,
+          statusEx: false,
           videos: {
             sources: [
               [{

@@ -37,7 +37,7 @@
               </div>
               <div class="col-6 q-pl-lg column items-center">
                 <div class="col row items-center full-width" v-for="element in hoja.respuestas" :key="element.id">
-                  <q-radio size="75px" class="text-h5 text-primary text-bold full-width items-center" v-model="res" :val="element" :label="element.name"/>
+                  <q-radio size="75px" :color="element.id === hoja.correcto &&  submit ? 'positive' : submit ? 'negative' : 'primary'" class="text-h5 text-primary text-bold full-width items-center" v-model="res" :val="element" :label="element.name"/>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@
             <q-btn class="q-pa-sm text-h6" color="primary" label="Reintentar" @click="reintentar()" no-caps style="width: 50%; border-radius: 10px;"/>
           </q-card-actions>
         </q-card>
-        <q-card v-else style="border-radius: 24px;" clickable>
+        <q-card v-else style="border-radius: 24px;">
           <div class="text-center text-primary text-h4 text-bold q-pa-lg">Respondiste con exito</div>
           <div class="column items-center justify-center q-pt-lg">
             <q-img src="completo.png" style="width: 400px"/>
@@ -130,11 +130,13 @@ export default {
       actividad_id: '',
       slide: 1,
       modulo: [],
+      modulos: [],
       actividad: [],
       hojas: [],
       val: [],
       verVal: false,
       error: false,
+      submit: false,
       valError: [],
       res: null,
       timer: '',
@@ -161,6 +163,7 @@ export default {
       }
     },
     validarRes () {
+      this.submit = true
       if (this.actividad[0].id === 3) {
         this.timer = setInterval(this.continuar, 2500)
       } else if (this.actividad[0].id === 4) {
@@ -211,6 +214,7 @@ export default {
     },
     siguiente () {
       this.slide++
+      this.submit = false
       this.verVal = false
       this.error = false
       this.res = []
@@ -219,6 +223,7 @@ export default {
       this.getmodulo()
     },
     reintentar () {
+      this.submit = false
       this.verVal = false
       this.error = false
       this.res = null
@@ -226,6 +231,13 @@ export default {
       this.getmodulo()
     },
     finalizar () {
+      this.modulos = JSON.parse(localStorage.getItem('modulos'))
+      if (this.actividad[0].id === 3) {
+        this.modulos[this.modulo[0].id - 1].statusCa = true
+      } else if (this.actividad[0].id === 4) {
+        this.modulos[this.modulo[0].id - 1].statusEx = true
+      }
+      localStorage.setItem('modulos', JSON.stringify(this.modulos))
       this.$router.go(-1)
       clearInterval(this.timer3)
     },

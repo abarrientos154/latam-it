@@ -17,7 +17,7 @@
  -->
     <q-scroll-area horizontal class="window-height absolute-top">
       <div class="row full-height no-wrap q-px-lg q-gutter-md" style="padding-top: 150px;">
-        <q-card style="border-radius: 24px; width: 700px; height: 90%;" clickable v-for="(modulo, index) in modulos" :key="index" @click="$router.push('/modulo/' + modulo.id)">
+        <q-card style="border-radius: 24px; width: 700px; height: 90%;" clickable v-for="(modulo, index) in modulos" :key="index" @click="modulo.id > 1 ? modulos[index - 1].statusCa && modulos[index - 1].statusEx ? $router.push('/modulo/' + modulo.id) : moduloEnable() : $router.push('/modulo/' + modulo.id)">
           <q-img :src="modulo.src" class="full-height">
             <div class="absolute-full row">
               <div class="full-height row items-center">
@@ -38,8 +38,25 @@
       <div class="text-h6 text-primary">Latam IT Academícela</div>
     </div>
     <q-dialog v-model="info">
+      <q-card style="border-radius: 24px;">
+        <div class="text-center text-primary text-h4 text-bold q-pa-lg">¡Recuerda!</div>
+        <div class="column items-center justify-center">
+          <q-img src="Mano.png" style="width: 400px"/>
+        </div>
+        <div class="row justify-center">
+          <div class="text-h6 text-primary q-pr-xs text-bold">Desliza</div>
+          <div class="text-h6">hacia tu izquierda</div>
+        </div>
+        <div class="text-h6 text-center q-pb-lg">para ver todos los modulos</div>
+      </q-card>
+    </q-dialog>
+    <q-dialog v-model="enable" persistent>
       <q-card style="border-radius: 24px; width: 85%; height: 85%;" clickable>
-        <q-img src="Mano.png" class="full-height"/>
+        <q-img src="Mano.png" class="full-height">
+          <div class="absolute-full row items-center">
+            <div class="text-h4 text-primary text-center">Para acceder a este modulo nesecita haber completado el anterior</div>
+          </div>
+        </q-img>
       </q-card>
     </q-dialog>
   </div>
@@ -51,7 +68,8 @@ export default {
     return {
       info: true,
       modulos: [],
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      enable: false
     }
   },
   mounted () {
@@ -59,6 +77,10 @@ export default {
     console.log(this.modulos)
   },
   methods: {
+    moduloEnable () {
+      this.enable = true
+      this.info = true
+    }
   }
 }
 </script>
