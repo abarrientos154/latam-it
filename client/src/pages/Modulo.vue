@@ -8,7 +8,7 @@
               <div>
                 <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
                 <div class="col q-pl-md">
-                  <q-img src="latam-color.png" style="width: 225px"/>
+                  <q-img src="pres.png" style="width: 225px"/>
                 </div>
               </div>
               <div class="column items-end absolute-bottom q-pa-lg">
@@ -84,6 +84,7 @@ export default {
   data () {
     return {
       id: '',
+      infoHome: false,
       modulo: [],
       vds: true,
       verPDF: false,
@@ -96,6 +97,7 @@ export default {
     if (this.$route.params.id) {
       this.id = this.$route.params.id
       this.modulo = JSON.parse(localStorage.getItem('modulos')).filter(v => v.id.toString() === this.id)
+      localStorage.setItem('infoHome', JSON.stringify(this.infoHome))
       console.log(this.modulo)
     }
   },

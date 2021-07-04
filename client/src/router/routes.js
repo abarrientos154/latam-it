@@ -9,6 +9,7 @@ const routes = [
       { path: '/actividad/:modulo_id/:id', component: () => import('pages/Actividad.vue') }
     ]
   },
+  { path: '/inicio', component: () => import('pages/Inicio.vue') },
   { path: '/splash', component: () => import('pages/Splash.vue') },
   {
     path: '/',

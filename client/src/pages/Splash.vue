@@ -13,6 +13,7 @@ export default {
     return {
       form: {},
       timer: '',
+      info: true,
       modulos: [
         {
           id: 1,
@@ -539,10 +540,11 @@ export default {
   },
   mounted () {
     localStorage.setItem('modulos', JSON.stringify(this.modulos))
+    localStorage.setItem('infoHome', JSON.stringify(this.info))
   },
   methods: {
     ejecutar () {
-      this.$router.push('/home')
+      this.$router.push('/inicio')
     }
   },
   beforeDestroy () {

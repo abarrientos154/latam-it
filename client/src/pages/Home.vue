@@ -72,7 +72,7 @@
 export default {
   data () {
     return {
-      info: true,
+      info: null,
       modulos: [],
       leftDrawerOpen: false,
       enable: false
@@ -80,6 +80,7 @@ export default {
   },
   mounted () {
     this.modulos = JSON.parse(localStorage.getItem('modulos'))
+    this.info = JSON.parse(localStorage.getItem('infoHome'))
     console.log(this.modulos)
   },
   methods: {
