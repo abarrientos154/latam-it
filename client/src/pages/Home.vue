@@ -51,12 +51,18 @@
       </q-card>
     </q-dialog>
     <q-dialog v-model="enable" persistent>
-      <q-card style="border-radius: 24px; width: 85%; height: 85%;" clickable>
-        <q-img src="Mano.png" class="full-height">
-          <div class="absolute-full row items-center">
-            <div class="text-h4 text-primary text-center">Para acceder a este modulo nesecita haber completado el anterior</div>
-          </div>
-        </q-img>
+      <q-card style="border-radius: 24px;" class="column">
+        <div class="col-2 row items-center justify-center text-primary text-h4 text-bold q-pa-lg">Tienes que tener en cuenta</div>
+        <div class="column items-center justify-center q-pt-lg">
+          <q-img src="precaucio.png" style="width: 200px"/>
+        </div>
+        <div class="column items-center q-pa-lg">
+          <div class="text-h6 text-no-wrap">Para poder ver modulos mas abanzados primero debes</div>
+          <div class="text-h6 text-primary q-pr-xs text-bold">completar el modulo anterior</div>
+        </div>
+        <q-card-actions class="col2 q-pb-lg" align="center">
+          <q-btn class="q-pa-sm text-h6" color="primary" label="Cerrar" v-close-popup no-caps style="width: 50%; border-radius: 10px;"/>
+        </q-card-actions>
       </q-card>
     </q-dialog>
   </div>
@@ -79,7 +85,6 @@ export default {
   methods: {
     moduloEnable () {
       this.enable = true
-      this.info = true
     }
   }
 }
