@@ -130,7 +130,10 @@ export default {
         this.actividad_id = this.$route.params.id
         this.modulo = JSON.parse(localStorage.getItem('modulos')).filter(v => v.id.toString() === this.modulo_id)
         this.actividad = this.modulo[0].actividades.filter(v => v.id.toString() === this.actividad_id)
-        this.hojas = this.actividad[0].hojas
+        if (this.actividad[0].id === 4) {
+          this.hojas = this.actividad[0].hojas
+          this.res = this.hojas[this.slide - 1].preguntas
+        }
         console.log(this.modulo)
         console.log(this.actividad)
       }
@@ -144,19 +147,19 @@ export default {
         }
       }
       console.log(this.val)
-      this.timer = setInterval(this.continuar, 3000)
+      this.timer = setInterval(this.continuar, 2500)
     },
     continuar () {
       this.valError = this.val.filter(v => v === false)
       if (this.slide < this.actividad[0].hojas.length && !this.valError.length) {
         this.verVal = true
         this.error = false
-        this.timer2 = setInterval(this.siguiente, 4000)
+        this.timer2 = setInterval(this.siguiente, 3000)
         clearInterval(this.timer)
       } else if (this.slide === this.actividad[0].hojas.length && !this.valError.length) {
         this.verVal = true
         this.error = false
-        this.timer3 = setInterval(this.finalizar, 4000)
+        this.timer3 = setInterval(this.finalizar, 3000)
         clearInterval(this.timer)
       } else if (this.slide < this.actividad[0].hojas.length) {
         this.verVal = true
@@ -178,6 +181,7 @@ export default {
       this.res = []
       this.val = []
       clearInterval(this.timer2)
+      this.getmodulo()
     },
     reintentar () {
       this.verVal = false

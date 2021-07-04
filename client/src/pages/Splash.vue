@@ -50,8 +50,50 @@ export default {
             },
             {
               id: 3,
-              name: 'Material de apoyo',
-              src: 'material del apoyo.png'
+              name: 'Casos de estudio',
+              src: 'material del apoyo.png',
+              casos: [
+                {
+                  id: 1,
+                  descriccion: '',
+                  preguntas: '',
+                  respuestas: [
+                    {
+                      name: '',
+                      id: 1
+                    },
+                    {
+                      name: '',
+                      id: 2
+                    },
+                    {
+                      name: '',
+                      id: 3
+                    }
+                  ],
+                  correcto: 1
+                },
+                {
+                  id: 2,
+                  descriccion: '',
+                  preguntas: '',
+                  respuestas: [
+                    {
+                      name: '',
+                      id: 1
+                    },
+                    {
+                      name: '',
+                      id: 2
+                    },
+                    {
+                      name: '',
+                      id: 3
+                    }
+                  ],
+                  correcto: 1
+                }
+              ]
             },
             {
               id: 4,
