@@ -7,6 +7,9 @@
             <div class="absolute-full row">
               <div>
                 <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
+                <div class="col q-pl-md">
+                  <q-img src="latam-color.png" style="width: 225px"/>
+                </div>
               </div>
               <div class="column items-end absolute-bottom q-pa-lg">
                 <div class="text-h3 text-bold">Título</div>

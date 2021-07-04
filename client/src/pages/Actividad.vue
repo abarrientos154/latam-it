@@ -10,6 +10,9 @@
               <div class="absolute-full row">
                 <div>
                   <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
+                  <div class="col q-pl-md">
+                    <q-img src="latam-color.png" style="width: 225px"/>
+                  </div>
                 </div>
                 <div class="column items-end absolute-bottom q-pa-lg">
                   <div class="text-h3 text-bold">{{actividad[0].titulo}}</div>
@@ -28,6 +31,9 @@
               <div class="absolute-full row">
                 <div>
                   <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
+                  <div class="col q-pl-md">
+                    <q-img src="latam-color.png" style="width: 225px"/>
+                  </div>
                 </div>
                 <div class="column items-end absolute-bottom q-pa-lg">
                   <div class="text-h3 text-bold">{{actividad[0].titulo}}</div>
@@ -59,14 +65,28 @@
           <q-btn class="q-pa-sm text-h5 text-bold" color="primary" label="Validar" @click="validarRes()" no-caps style="width: 250px; border-radius: 10px;"/>
         </div>
         <q-dialog v-model="verVal" persistent>
-          <q-card v-if="error" style="border-radius: 24px; width: 85%; height: 85%;" class="column">
-            <q-img src="Mano.png" class="col"/>
+          <q-card v-if="error" style="border-radius: 24px;" class="column">
+            <div class="col-2 row items-center justify-center text-primary text-h4 text-bold q-pa-lg">Vuelve a intentarlo</div>
+            <div class="column items-center justify-center q-pt-lg">
+              <q-img src="tryagain.png" style="width: 200px"/>
+            </div>
+            <div class="column items-center q-pa-lg">
+              <div class="text-h6 text-no-wrap">Recuerda que tienes que tener todas las alternativas</div>
+              <div class="row">
+                <div class="text-h6 text-primary q-pr-xs text-bold">correctas</div>
+                <div class="text-h6">{{slide === actividad[0].hojas.length ? 'para poder completar el examen' : 'para pasar a las sigientes preguntas.'}}</div>
+              </div>
+            </div>
             <q-card-actions class="col2 q-pb-lg" align="center">
-              <q-btn class="q-pa-sm text-h6" color="primary" label="Reintentar" @click="$router.go(0)" no-caps style="width: 50%; border-radius: 10px;"/>
+              <q-btn class="q-pa-sm text-h6" color="primary" label="Reintentar" @click="reintentar()" no-caps style="width: 50%; border-radius: 10px;"/>
             </q-card-actions>
           </q-card>
-          <q-card v-else style="border-radius: 24px; width: 85%; height: 85%;" clickable>
-            <q-img src="Mano.png" class="full-height"/>
+          <q-card v-else style="border-radius: 24px;" clickable>
+            <div class="text-center text-primary text-h4 text-bold q-pa-lg">Respondiste con exito</div>
+            <div class="column items-center justify-center q-pt-lg">
+              <q-img src="completo.png" style="width: 400px"/>
+            </div>
+            <div class="text-center text-h6 q-px-lg q-pt-lg q-pb-xl">{{slide === actividad[0].hojas.length ? 'Felicidades haz completado el examen con éxito' : 'Te estamos redirecionando a la siguiente pregunta.'}}</div>
           </q-card>
         </q-dialog>
       </div>
@@ -158,6 +178,13 @@ export default {
       this.res = []
       this.val = []
       clearInterval(this.timer2)
+    },
+    reintentar () {
+      this.verVal = false
+      this.error = false
+      this.res = []
+      this.val = []
+      this.getmodulo()
     },
     finalizar () {
       this.$router.go(-1)

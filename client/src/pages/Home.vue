@@ -2,7 +2,9 @@
   <div>
     <q-header>
       <div class="full-width row items-center justify-between bg-white q-px-lg" style="height: 100px">
-        <div class="text-h4 text-black">Latam it</div>
+        <div class="col q-pt-lg">
+          <q-img src="latam-color.png" style="width: 225px"/>
+        </div>
         <q-btn size="30px" outline dense round color="black" icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
       </div>
     </q-header>

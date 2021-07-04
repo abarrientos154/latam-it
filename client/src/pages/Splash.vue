@@ -64,16 +64,16 @@ export default {
                   descriccion: 'Asocia los componentes del coeficiente emocional de Peter Salovey y John Mayer con su respectiva definición.',
                   preguntas: [
                     {
-                      name: 'Autorregulación o control',
-                      id: 1
-                    },
-                    {
                       name: 'Empatía',
                       id: 2
                     },
                     {
                       name: 'Motivación y persistencia',
                       id: 3
+                    },
+                    {
+                      name: 'Autorregulación o control',
+                      id: 1
                     }
                   ],
                   respuestas: [
@@ -97,16 +97,16 @@ export default {
                   descriccion: 'Asocia los siguientes conceptos con sus respectiva definición.',
                   preguntas: [
                     {
+                      name: 'Supervisión',
+                      id: 3
+                    },
+                    {
                       name: 'Gestión',
                       id: 1
                     },
                     {
                       name: 'Liderazgo',
                       id: 2
-                    },
-                    {
-                      name: 'Supervisión',
-                      id: 3
                     }
                   ],
                   respuestas: [
@@ -189,16 +189,16 @@ export default {
                   descriccion: 'Asocia las modalidades de liderazgo con su respectiva definición.',
                   preguntas: [
                     {
+                      name: 'Liderazgo adaptativo',
+                      id: 3
+                    },
+                    {
                       name: 'Liderazgo situacional',
                       id: 1
                     },
                     {
                       name: 'Liderazgo transaccional',
                       id: 2
-                    },
-                    {
-                      name: 'Liderazgo adaptativo',
-                      id: 3
                     }
                   ],
                   respuestas: [
@@ -222,16 +222,16 @@ export default {
                   descriccion: 'Asocia las dimensiones de liderazgo de rango completo de Bass y Avolio con sus definiciones correspondientes.',
                   preguntas: [
                     {
-                      name: 'Liderazgo adaptativo',
-                      id: 1
-                    },
-                    {
                       name: 'Consideración individual',
                       id: 2
                     },
                     {
                       name: 'Administración activa por excepción',
                       id: 3
+                    },
+                    {
+                      name: 'Liderazgo adaptativo',
+                      id: 1
                     }
                   ],
                   respuestas: [
@@ -262,7 +262,7 @@ export default {
         {
           id: 3,
           name: 'Módulo 03',
-          src: 'modulo2.png',
+          src: 'bg.jpg',
           titulo: '',
           descriccion: '',
           videos: {
@@ -308,16 +308,16 @@ export default {
                   descriccion: 'Asocia y une los pasos en los que aprende un colaborador o colaboradora con su comportamiento respectivo.',
                   preguntas: [
                     {
-                      name: 'Determinación de objetivos ',
-                      id: 1
-                    },
-                    {
                       name: 'Toma de conciencia',
                       id: 2
                     },
                     {
                       name: 'Observar',
                       id: 3
+                    },
+                    {
+                      name: 'Determinación de objetivos ',
+                      id: 1
                     }
                   ],
                   respuestas: [
@@ -341,16 +341,16 @@ export default {
                   descriccion: 'Asocia cada fase en la forma de manejar un conflicto con su procedimiento.',
                   preguntas: [
                     {
+                      name: 'Reforzar',
+                      id: 3
+                    },
+                    {
                       name: 'Admitir',
                       id: 1
                     },
                     {
                       name: 'Investigar',
                       id: 2
-                    },
-                    {
-                      name: 'Reforzar',
-                      id: 3
                     }
                   ],
                   respuestas: [
