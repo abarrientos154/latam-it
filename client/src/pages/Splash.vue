@@ -182,7 +182,7 @@ export default {
             {
               id: 6,
               name: 'Ir al Menu',
-              src: 'resumen.png'
+              src: 'Volver al inicio.png'
             }
           ]
         },
@@ -197,11 +197,15 @@ export default {
           videos: {
             sources: [
               [{
-                src: '.mp4',
+                src: 'video3.mp4',
                 type: 'video/mp4'
               }],
               [{
-                src: '.mp4',
+                src: 'video4.mp4',
+                type: 'video/mp4'
+              }],
+              [{
+                src: 'video5.mp4',
                 type: 'video/mp4'
               }]
             ],
@@ -219,7 +223,8 @@ export default {
             {
               id: 2,
               name: 'Glosario',
-              src: 'glosario.png'
+              src: 'glosario.png',
+              pdf: 'Glosario2.pdf'
             },
             {
               id: 3,
@@ -347,7 +352,13 @@ export default {
             {
               id: 5,
               name: 'Ver resumen',
-              src: 'resumen.png'
+              src: 'resumen.png',
+              pdf: 'Resumen2.pdf'
+            },
+            {
+              id: 6,
+              name: 'Ir al Menu',
+              src: 'Volver al inicio.png'
             }
           ]
         },
@@ -362,11 +373,11 @@ export default {
           videos: {
             sources: [
               [{
-                src: '.mp4',
+                src: 'video6.mp4',
                 type: 'video/mp4'
               }],
               [{
-                src: '.mp4',
+                src: 'video7.mp4',
                 type: 'video/mp4'
               }]
             ],
@@ -384,7 +395,8 @@ export default {
             {
               id: 2,
               name: 'Glosario',
-              src: 'glosario.png'
+              src: 'glosario.png',
+              pdf: 'Glosario3.pdf'
             },
             {
               id: 3,
@@ -512,7 +524,13 @@ export default {
             {
               id: 5,
               name: 'Ver resumen',
-              src: 'resumen.png'
+              src: 'resumen.png',
+              pdf: 'Resumen3.pdf'
+            },
+            {
+              id: 6,
+              name: 'Ir al Menu',
+              src: 'Volver al inicio.png'
             }
           ]
         }
