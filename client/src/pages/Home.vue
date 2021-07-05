@@ -5,7 +5,11 @@
         <div class="col q-pt-sm">
           <q-img src="latam-color.png" style="width: 150px"/>
         </div>
-        <q-btn size="20px" outline dense round color="black" icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
+        <q-fab color="primary" icon="menu" direction="left">
+        <q-fab-action label="Salir" color="primary" @click="onClick" icon="logout" />
+        <q-fab-action label="Silenciar" color="primary" @click="onClick" icon="volume_off" />
+      </q-fab>
+        <!-- <q-btn size="20px" outline dense round color="black" icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/> -->
       </div>
     </q-header>
 

@@ -87,7 +87,7 @@
           <q-btn class="q-pa-xs text-subtitle1 text-bold" color="primary" label="Validar" @click="validarRes()" no-caps style="width: 250px; border-radius: 10px;"/>
         </div>
       </div>
-      <q-dialog v-model="verVal" persistent>
+      <q-dialog  v-model="verVal" persistent>
         <q-card v-if="error" style="border-radius: 24px;" class="column q-pa-md">
           <div class="col-2 row items-center justify-center text-primary text-h6 text-bold q-mb-sm">Vuelve a intentarlo</div>
           <div class="column items-center justify-center q-mb-sm">
@@ -105,11 +105,11 @@
           </q-card-actions>
         </q-card>
         <q-card v-else style="border-radius: 24px;" class="q-pa-md">
-          <div class="text-center text-primary text-h6 text-bold q-mb-sm">Respondiste con exito</div>
+          <div class="text-center text-primary text-h6 text-bold q-mb-sm">Respondiste correctamente!</div>
           <div class="column items-center justify-center q-mb-sm">
-            <q-img src="completo.png" style="width: 300px"/>
+            <q-img src="completo.png" style="width: 100px"/>
           </div>
-          <div class="text-center text-subtitle1 text-bold">{{slide === hojas.length ? 'Felicidades haz completado el examen con éxito' : 'Te estamos redirecionando a la siguientes preguntas.'}}</div>
+          <div class="text-center text-subtitle1 text-bold">{{slide === hojas.length ? 'Felicidades, haz completado el examen con éxito.' : 'Te estamos redirecionando a la siguientes preguntas.'}}</div>
         </q-card>
       </q-dialog>
     </div>

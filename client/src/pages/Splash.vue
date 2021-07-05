@@ -212,7 +212,7 @@ export default {
             ],
             options: {
               autoplay: true,
-              volume: 0.1
+              volume: 0.6
             }
           },
           actividades: [
@@ -384,7 +384,7 @@ export default {
             ],
             options: {
               autoplay: true,
-              volume: 0.1
+              volume: 0.6
             }
           },
           actividades: [
