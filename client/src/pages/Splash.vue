@@ -535,6 +535,476 @@ export default {
             }
           ]
         }
+      ],
+      modulos2: [
+        {
+          id: 1,
+          name: 'Módulo 01',
+          src: 'modulo1.png',
+          titulo: '',
+          descriccion: '',
+          statusCa: false,
+          statusEx: false,
+          videos: {
+            sources: [
+              [{
+                src: 'video1.mp4',
+                type: 'video/mp4'
+              }],
+              [{
+                src: 'video2.mp4',
+                type: 'video/mp4'
+              }]
+            ],
+            options: {
+              autoplay: true,
+              volume: 0.6
+            }
+          },
+          actividades: [
+            {
+              id: 1,
+              name: 'Ver videos',
+              src: 'ver video.png'
+            },
+            {
+              id: 2,
+              name: 'Glosario',
+              src: 'glosario.png',
+              pdf: '.pdf'
+            },
+            {
+              id: 3,
+              name: 'Casos de estudio',
+              src: 'material del apoyo.png',
+              titulo: 'Grupo versus Equipo',
+              descriccion: 'A continuación, te presentamos algunos casos, los cuales te ayudaran a fijar el conocimiento. Lee con atención y responde las preguntas que te presentamos.',
+              casos: [
+                {
+                  id: 1,
+                  descriccion: 'En el Torneo de Artes Marciales "Summer", que se llega a cabo todos los años en la ciudad de Santiago, existen diferentes modalidades, entre ellas: Fomas con armas, Peleas individuales, Peleas por Equipo y combates tradicionales. En el torneo pasado la escuela Rioshi le dio una sorpresa a toda la comunidad marcial, pues a pesar de que sus peleadores no eran los más poderosos en los combates individuales, lograron quedarse con el primer lugar de la categoría por equipos, ganándole la final a la escuela OVK de la cual salieron todos los campeones de las modalidades individuales.',
+                  pregunta: '¿Qué deberá hacer el entrenador de la escuela OVK, después de esta derrotar? ',
+                  respuestas: [
+                    {
+                      name: 'Entrenar más duro.',
+                      id: 1
+                    },
+                    {
+                      name: 'Promover las relaciones interpersonales dentro del grupo y así se conozcan mejor.',
+                      id: 2
+                    },
+                    {
+                      name: 'No participar de nuevo en la categoría por equipos.',
+                      id: 3
+                    }
+                  ],
+                  correcto: 2
+                },
+                {
+                  id: 2,
+                  descriccion: 'En el Torneo de Artes Marciales "Summer", que se llega a cabo todos los años en la ciudad de Santiago, existen diferentes modalidades, entre ellas: Fomas con armas, Peleas individuales, Peleas por Equipo y combates tradicionales. En el torneo pasado la escuela Rioshi le dio una sorpresa a toda la comunidad marcial, pues a pesar de que sus peleadores no eran los más poderosos en los combates individuales, lograron quedarse con el primer lugar de la categoría por equipos, ganándole la final a la escuela OVK de la cual salieron todos los campeones de las modalidades individuales.',
+                  pregunta: '¿Por qué la escuela Rioshi quedo campeona de la categoría de equipos?',
+                  respuestas: [
+                    {
+                      name: 'La escuela OVK, estaba cansada por los combates anteriores.',
+                      id: 1
+                    },
+                    {
+                      name: 'Los integrantes de equipo Rioshi, entrenando juntos todas las semanas.',
+                      id: 2
+                    },
+                    {
+                      name: 'La escuela OVK dejo que Rioshi ganara.',
+                      id: 3
+                    }
+                  ],
+                  correcto: 2
+                }
+              ]
+            },
+            {
+              id: 4,
+              name: 'Realizar examen',
+              src: 'realizar examen.png',
+              titulo: 'Grupo versus Equipo',
+              hojas: [
+                {
+                  id: 1,
+                  descriccion: 'Asocia los siguientes conceptos con sus respectivas definiciones.',
+                  preguntas: [
+                    {
+                      name: 'Principio de Aristóteles',
+                      id: 2
+                    },
+                    {
+                      name: 'Organización exitosa',
+                      id: 3
+                    },
+                    {
+                      name: 'Equipo de trabajo',
+                      id: 1
+                    }
+                  ],
+                  respuestas: [
+                    {
+                      name: 'Grupo de personas altamente comunicativas altamente cualificadas con un propósito y objetivo en común.',
+                      id: 1
+                    },
+                    {
+                      name: 'Hace referencia a que el todo es más que la suma de sus partes.',
+                      id: 2
+                    },
+                    {
+                      name: 'Personal alineado y comprometido, además de planificado y coordinado.',
+                      id: 3
+                    }
+                  ],
+                  correcto: [1, 2, 3]
+                },
+                {
+                  id: 2,
+                  descriccion: 'Asocia los siguientes conceptos con sus respectivas definiciones.',
+                  preguntas: [
+                    {
+                      name: 'Objetivos de cada equipo',
+                      id: 3
+                    },
+                    {
+                      name: 'Problemas empresariales',
+                      id: 1
+                    },
+                    {
+                      name: 'Roles de trabajo',
+                      id: 2
+                    }
+                  ],
+                  respuestas: [
+                    {
+                      name: 'En su mayoría se originan a partir de una mala comunicación.',
+                      id: 1
+                    },
+                    {
+                      name: 'Cada integrante del equipo debe cumplirlo sin perder la noción de equipo.',
+                      id: 2
+                    },
+                    {
+                      name: 'Deben ser exactos, específicos, medibles, cuantificables, retadores.',
+                      id: 3
+                    }
+                  ],
+                  correcto: [1, 2, 3]
+                }
+              ]
+            },
+            {
+              id: 5,
+              name: 'Ver resumen',
+              src: 'resumen.png',
+              pdf: '.pdf'
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: 'Módulo 02',
+          src: 'modulo2.png',
+          titulo: '',
+          descriccion: '',
+          statusCa: false,
+          statusEx: false,
+          videos: {
+            sources: [
+              [{
+                src: 'video1.mp4',
+                type: 'video/mp4'
+              }],
+              [{
+                src: 'video2.mp4',
+                type: 'video/mp4'
+              }]
+            ],
+            options: {
+              autoplay: true,
+              volume: 0.6
+            }
+          },
+          actividades: [
+            {
+              id: 1,
+              name: 'Ver videos',
+              src: 'ver video.png'
+            },
+            {
+              id: 2,
+              name: 'Glosario',
+              src: 'glosario.png',
+              pdf: '.pdf'
+            },
+            {
+              id: 3,
+              name: 'Casos de estudio',
+              src: 'material del apoyo.png',
+              titulo: 'Equipos Efectivos en las Organizaciones de trabajo',
+              descriccion: 'A continuación, te presentamos algunos casos, los cuales te ayudaran a fijar el conocimiento. Lee con atención y responde las preguntas que te presentamos.',
+              casos: [
+                {
+                  id: 1,
+                  descriccion: 'Este es el caso de Monserrat y Aylin, las dos ingresaron como ejecutivas de ventas en una agencia de viajes "Vente". Monserrat ingreso los primeros días de diciembre en cambio Aylin ingreso el 15 del mismo mes, con dos semanas de diferencia, Aylin tiene una amplia experiencia en el área de ventas, mientras que para Monserrat este es su segundo empleo, pero durante las dos primeras semanas de diciembre Monserrat recibió una instrucción donde conoció la misión, visión y valores de la empresa, adicionalmente paso un fin de semana en el Hotel "Mirador del Condor" (uno de los principales socios de "Vente"), por otra parte Aylin ingreso en temporada peak y solo recibió una formación escueta, la cual debería de haber sido suficiente debido a su amplia experiencia. A mediados de enero Monserrat ya alcanzo sus metas comerciales, mientras que Aylin no ha podido vender más de dos Packs.',
+                  pregunta: '¿Cuál de las siguientes opciones puede ser la razón de la mala gestión de Aylin?',
+                  respuestas: [
+                    {
+                      name: 'Monserrat tuvo suerte de principiante.',
+                      id: 1
+                    },
+                    {
+                      name: 'La base de datos de posibles clientes, que manejaba Aylin no eran de perfiles viajeros.',
+                      id: 2
+                    },
+                    {
+                      name: 'La instrucción de Monserrat genero un sentido de pertenencia en ella.',
+                      id: 3
+                    }
+                  ],
+                  correcto: 3
+                },
+                {
+                  id: 2,
+                  descriccion: 'Este es el caso de Monserrat y Aylin, las dos ingresaron como ejecutivas de ventas en una agencia de viajes "Vente". Monserrat ingreso los primeros días de diciembre en cambio Aylin ingreso el 15 del mismo mes, con dos semanas de diferencia, Aylin tiene una amplia experiencia en el área de ventas, mientras que para Monserrat este es su segundo empleo, pero durante las dos primeras semanas de diciembre Monserrat recibió una instrucción donde conoció la misión, visión y valores de la empresa, adicionalmente paso un fin de semana en el Hotel "Mirador del Condor" (uno de los principales socios de "Vente"), por otra parte Aylin ingreso en temporada peak y solo recibió una formación escueta, la cual debería de haber sido suficiente debido a su amplia experiencia. A mediados de enero Monserrat ya alcanzo sus metas comerciales, mientras que Aylin no ha podido vender más de dos Packs.',
+                  pregunta: '¿Qué debería hacer la Gerencia con el caso de Aylin?',
+                  respuestas: [
+                    {
+                      name: 'Despedirla y contratar a otra persona. ',
+                      id: 1
+                    },
+                    {
+                      name: 'Darle una instrucción al igual que la recibió Monserrat.',
+                      id: 2
+                    },
+                    {
+                      name: 'Ponerla bajo la supervisión de Monserrat.',
+                      id: 3
+                    }
+                  ],
+                  correcto: 2
+                }
+              ]
+            },
+            {
+              id: 4,
+              name: 'Realizar examen',
+              src: 'realizar examen.png',
+              titulo: 'Equipos Efectivos en las Organizaciones de trabajo',
+              hojas: [
+                {
+                  id: 1,
+                  descriccion: 'Asocia los siguientes conceptos con sus respectivas definiciones.',
+                  preguntas: [
+                    {
+                      name: 'Visión',
+                      id: 2
+                    },
+                    {
+                      name: 'Misión',
+                      id: 3
+                    },
+                    {
+                      name: 'Valores',
+                      id: 1
+                    }
+                  ],
+                  respuestas: [
+                    {
+                      name: 'Define el conjunto de principios, creencias, reglas que regulan la gestión de la organización. Constituyen la filosofía institucional y el soporte de la cultura organizacional.',
+                      id: 1
+                    },
+                    {
+                      name: 'Declaración para guiar, y alertar a la organización en su conjunto para alcanzar el estado deseado por la organización.',
+                      id: 2
+                    },
+                    {
+                      name: 'Define el negocio al que se dedica la organización, las necesidades que cubre con sus productos y servicios, el mercado en el cual se desarrolla la empresa y la imagen pública de la empresa u organización.',
+                      id: 3
+                    }
+                  ],
+                  correcto: [1, 2, 3]
+                },
+                {
+                  id: 2,
+                  descriccion: 'Asocia los siguientes conceptos con sus respectivas definiciones.',
+                  preguntas: [
+                    {
+                      name: 'Comunicación',
+                      id: 3
+                    },
+                    {
+                      name: 'Confianza',
+                      id: 1
+                    },
+                    {
+                      name: 'Coordinación',
+                      id: 2
+                    }
+                  ],
+                  respuestas: [
+                    {
+                      name: 'Cuando el respeto y los afectos prevalecen en un equipo, los miembros serán más sensibles con la necesidad de sus colegas, lo que significará que estarán más dispuestos a ayudarlos.',
+                      id: 1
+                    },
+                    {
+                      name: 'Permite abordar los problemas de manera eficiente, sin desperdiciar tiempo realizando tareas innecesarias que produzcan retrasos, errores, frustración y pérdidas materiales y económicas.',
+                      id: 2
+                    },
+                    {
+                      name: 'Es un componente que permite transmitir los mensajes de buena manera, sin dejar dudas al respecto, evitando que se produzcan fallas, interferencias, rumores, retrasos o incomprensión entre los integrantes del equipo.',
+                      id: 3
+                    }
+                  ],
+                  correcto: [1, 2, 3]
+                }
+              ]
+            },
+            {
+              id: 5,
+              name: 'Ver resumen',
+              src: 'resumen.png',
+              pdf: '.pdf'
+            }
+          ]
+        },
+        {
+          id: 3,
+          name: 'Módulo 03',
+          src: 'bg.jpg',
+          titulo: '',
+          descriccion: '',
+          statusCa: false,
+          statusEx: false,
+          videos: {
+            sources: [
+              [{
+                src: 'video1.mp4',
+                type: 'video/mp4'
+              }],
+              [{
+                src: 'video2.mp4',
+                type: 'video/mp4'
+              }]
+            ],
+            options: {
+              autoplay: true,
+              volume: 0.6
+            }
+          },
+          actividades: [
+            {
+              id: 1,
+              name: 'Ver videos',
+              src: 'ver video.png'
+            },
+            {
+              id: 2,
+              name: 'Glosario',
+              src: 'glosario.png',
+              pdf: '.pdf'
+            },
+            {
+              id: 3,
+              name: 'Casos de estudio',
+              src: 'material del apoyo.png',
+              titulo: 'Fase de incomodidad',
+              descriccion: 'A continuación, te presentamos algunos casos, los cuales te ayudaran a fijar el conocimiento. Lee con atención y responde las preguntas que te presentamos',
+              casos: [
+                {
+                  id: 1,
+                  descriccion: 'En el almacén de Ripley del Mail Vivo del Paseo Estado, se vienen dando situaciones incomodas cada vez que es necesario reponer la tienda, ya que un grupo de empleados se niega a trabajar en el área de electrodomésticos alegando que ese trabajo es más complicado por diferentes razones y que debería hacerse con más personas. El encargado del almacén es Roberto que tienes más de 10 años en la tienda, Roberto no presta atención a las solicitudes de los reponedores lo que ha provocado que, en dos ocasiones, la tienda no pueda ser abierta al público a la hora estipulada.',
+                  pregunta: '¿Qué está pasando en este Grupo de Trabajo? ',
+                  respuestas: [
+                    {
+                      name: 'Hace falta más personal.',
+                      id: 1
+                    },
+                    {
+                      name: 'No tienen una comunicación efectiva.',
+                      id: 2
+                    },
+                    {
+                      name: 'El personal no quiere trabajar.',
+                      id: 3
+                    }
+                  ],
+                  correcto: 2
+                },
+                {
+                  id: 2,
+                  descriccion: 'En el almacén de Ripley del Mail Vivo del Paseo Estado, se vienen dando situaciones incomodas cada vez que es necesario reponer la tienda, ya que un grupo de empleados se niega a trabajar en el área de electrodomésticos alegando que ese trabajo es más complicado por diferentes razones y que debería hacerse con más personas. El encargado del almacén es Roberto que tienes más de 10 años en la tienda, Roberto no presta atención a las solicitudes de los reponedores lo que ha provocado que, en dos ocasiones, la tienda no pueda ser abierta al público a la hora estipulada.',
+                  pregunta: '¿Qué debería hacer el encargado de almacén? ',
+                  respuestas: [
+                    {
+                      name: 'Generar un laboral agradable.',
+                      id: 1
+                    },
+                    {
+                      name: 'Solicitar más reponedores.',
+                      id: 2
+                    },
+                    {
+                      name: 'Abandonar empresa.',
+                      id: 3
+                    }
+                  ],
+                  correcto: 1
+                }
+              ]
+            },
+            {
+              id: 4,
+              name: 'Realizar examen',
+              src: 'realizar examen.png',
+              titulo: 'Fase de incomodidad',
+              hojas: [
+                {
+                  id: 1,
+                  descriccion: 'Asocia los siguientes conceptos con sus respectivas definiciones. ',
+                  preguntas: [
+                    {
+                      name: '¿Cómo podremos fomentar el desarrollo individual?',
+                      id: 2
+                    },
+                    {
+                      name: '¿Qué hacer si tenemos un mal clima laboral?',
+                      id: 3
+                    },
+                    {
+                      name: '¿Qué hacer cuando la crítica es inadecuada? ',
+                      id: 1
+                    }
+                  ],
+                  respuestas: [
+                    {
+                      name: 'Fomentar las evaluaciones imparciales.',
+                      id: 1
+                    },
+                    {
+                      name: 'Capacitación continua a todos los miembros de nuestra organización.',
+                      id: 2
+                    },
+                    {
+                      name: 'Fomentar espacios donde los trabajadores puedan expresarse con franqueza.',
+                      id: 3
+                    }
+                  ],
+                  correcto: [1, 2, 3]
+                }
+              ]
+            },
+            {
+              id: 5,
+              name: 'Ver resumen',
+              src: 'resumen.png',
+              pdf: '.pdf'
+            }
+          ]
+        }
       ]
     }
   },
