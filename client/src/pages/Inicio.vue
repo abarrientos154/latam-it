@@ -1,6 +1,6 @@
 <template>
   <q-avatar square class="window-width window-height" @click="accion()">
-    <q-img src="EJEMPLO-RESEÑA-LIDERAZGO.jpg" class="full-height"/>
+    <q-img src="liderazgoefectivo.png" class="full-height"/>
   </q-avatar>
 </template>
 <script>

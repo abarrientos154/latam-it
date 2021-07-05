@@ -39,9 +39,9 @@
       <div class="text-subtitle1 text-secondary q-mr-xs">Power by</div>
       <div class="text-subtitle1 text-primary">Latam IT Academícela</div>
     </div>
-    <q-dialog v-model="info">
+    <q-dialog full-width v-model="info">
       <q-carousel v-model="slide" style="height: auto; border-radius: 24px;" infinite>
-        <q-carousel-slide :name="1" class="q-pa-sm">
+       <!--  <q-carousel-slide :name="1" class="q-pa-sm">
           <div class="text-center text-primary text-h5 text-bold q-pa-xs">Bienvenido</div>
           <div class="text-subtitle2 text-center">Estimado alumno o alumna, te damos la bienvenida al curso “Manejo de Herramientas para un Liderazgo Efectivo”.</div>
           <div class="text-subtitle2 text-center">Cada uno de los módulos que verás, está compuesto por: Videos explicativos, textos de Resumen y Glosario de términos, Actividades Interactivas y Casos de Estudio.</div>
@@ -50,11 +50,11 @@
           <q-card-actions class="col2 full-width" align="center">
             <q-btn class="q-pa-xs text-subtitle1 text-bold" color="primary" label="Siguiente" @click="slide++" no-caps style="width: 50%; border-radius: 10px;"/>
           </q-card-actions>
-        </q-carousel-slide>
+        </q-carousel-slide> -->
         <q-carousel-slide :name="2">
           <div class="text-center text-primary text-h5 text-bold q-pa-xs">¡Recuerda!</div>
           <div class="column items-center justify-center">
-            <q-img src="Mano.png" style="width: 250px"/>
+            <q-img src="Mano.png" style="width: 150px"/>
           </div>
           <div class="row justify-center">
             <div class="text-subtitle1 text-primary q-pr-xs text-bold">Desliza</div>
@@ -86,7 +86,7 @@
 export default {
   data () {
     return {
-      slide: 1,
+      slide: 2,
       info: null,
       modulos: [],
       leftDrawerOpen: false,

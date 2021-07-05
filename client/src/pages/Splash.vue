@@ -1022,7 +1022,11 @@ export default {
     clearInterval(this.timer)
   },
   created () {
-    this.timer = setInterval(this.ejecutar, 4000)
+    this.info = new Audio(require('../../public/DEMO.mp3'))
+    // a.loop = true
+    console.log('pre')
+    this.info.play()
+    this.timer = setInterval(this.ejecutar, 6000)
   },
   cancelAutoUpdate () { clearInterval(this.timer) }
 }
