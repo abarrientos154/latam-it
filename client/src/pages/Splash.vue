@@ -1,7 +1,7 @@
 <template>
   <div class="full-window column">
     <div class="absolute-center full-width">
-      <q-img src="latam-color.png" class="full-height">
+      <q-img src="intro.gif" class="full-height">
       </q-img>
     </div>
   </div>
@@ -19,7 +19,7 @@ export default {
           id: 1,
           name: 'Módulo 01',
           src: 'modulo1.png',
-          titulo: '',
+          title: 'Liderazgo y Gestión',
           descriccion: '',
           statusCa: false,
           statusEx: false,
@@ -191,7 +191,7 @@ export default {
           id: 2,
           name: 'Módulo 02',
           src: 'modulo2.png',
-          titulo: '',
+          title: 'Modelos de Liderazgo',
           descriccion: '',
           statusCa: false,
           statusEx: false,
@@ -367,7 +367,7 @@ export default {
           id: 3,
           name: 'Módulo 03',
           src: 'bg.jpg',
-          titulo: '',
+          title: 'Planificar, Delegar y Coaching',
           descriccion: '',
           statusCa: false,
           statusEx: false,
