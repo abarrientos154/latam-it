@@ -36,7 +36,7 @@
               </div>
               <div class="col q-pl-lg column items-center">
                 <div class="col row items-center full-width" v-for="element in hoja.respuestas" :key="element.id">
-                  <q-radio size="50px" :color="element.id === hoja.correcto &&  submit ? 'positive' : submit ? 'negative' : 'primary'" class="text-subtitle1 text-primary text-bold full-width items-center" v-model="res" :val="element" :label="element.name"/>
+                  <q-radio size="50px" :color="element.id === hoja.correcto &&  submit ? 'positive' : submit ? 'negative' : 'secondary'" class="text-subtitle2 text-primary text-bold full-width items-center" v-model="res" :val="element" :label="element.name"/>
                 </div>
               </div>
             </div>

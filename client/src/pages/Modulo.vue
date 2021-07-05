@@ -52,7 +52,7 @@
         </div>
         <q-card-actions align="center" class="q-pa-none">
           <q-btn v-if="slide < modulo[0].videos.sources.length" class="q-pa-xs text-subtitle1 text-bold" color="primary" label="Siguiente" @click="sigiente()" no-caps style="width: 50%; border-radius: 10px;"/>
-          <q-btn v-else class="q-pa-xs text-subtitle1 text-bold" color="primary" label="Cerrar" v-close-popup no-caps style="width: 50%; border-radius: 10px;"/>
+          <q-btn v-else class="q-pa-xs text-subtitle1 text-bold" color="primary" label="Cerrar" @click="cerrarVds()" v-close-popup no-caps style="width: 50%; border-radius: 10px;"/>
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -85,8 +85,9 @@ export default {
     return {
       id: '',
       infoHome: false,
+      modulos: [],
       modulo: [],
-      vds: true,
+      vds: null,
       verPDF: false,
       pagsPDF: 0,
       pdfName: undefined,
@@ -97,6 +98,7 @@ export default {
     if (this.$route.params.id) {
       this.id = this.$route.params.id
       this.modulo = JSON.parse(localStorage.getItem('modulos')).filter(v => v.id.toString() === this.id)
+      this.vds = this.modulo[0].videos.visto
       localStorage.setItem('infoHome', JSON.stringify(this.infoHome))
       console.log(this.modulo)
     }
@@ -137,6 +139,13 @@ export default {
     verVideos () {
       this.slide = 1
       this.vds = !this.vds
+    },
+    cerrarVds () {
+      if (this.modulo[0].videos.visto) {
+        this.modulos = JSON.parse(localStorage.getItem('modulos'))
+        this.modulos[this.modulo[0].id - 1].videos.visto = false
+        localStorage.setItem('modulos', JSON.stringify(this.modulos))
+      }
     }
   }
 }

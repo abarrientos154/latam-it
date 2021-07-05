@@ -1,10 +1,7 @@
 <template>
-  <div class="full-window column" @click="accion()">
-    <div class="absolute-center full-width">
-      <q-img src="EJEMPLO-RESEÑA-LIDERAZGO.jpg" class="full-height">
-      </q-img>
-    </div>
-  </div>
+  <q-avatar square class="window-width window-height" @click="accion()">
+    <q-img src="EJEMPLO-RESEÑA-LIDERAZGO.jpg" class="full-height"/>
+  </q-avatar>
 </template>
 <script>
 export default {
