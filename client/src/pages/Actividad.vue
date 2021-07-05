@@ -1,20 +1,19 @@
 <template>
   <div>
     <div>
-      <div v-if="actividad[0].id === 3" class="window-height column">
-        <div class="column items-center q-pt-md q-px-md">
-          <q-card style="border-radius: 24px; width: 100%; height: 200px;">
+      <div v-if="actividad[0].id === 3" class="window-height column q-pa-md">
+        <div class="column items-center">
+          <q-card style="border-radius: 15px; width: 100%; height: 150px;">
             <q-img :src="actividad[0].src" class="full-height">
               <div class="absolute-full row">
-                <div>
-                  <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
-                  <div class="col q-pl-md">
-                    <q-img src="latam-color.png" style="width: 225px"/>
+                <div class="q-pa-xs">
+                  <div class="text-h3 text-bold q-mb-sm">{{modulo[0].name}}</div>
+                  <div class="col">
+                    <q-img src="esquinas.png" style="width: 50px"/>
                   </div>
                 </div>
-                <div class="column items-end absolute-bottom q-pa-lg">
-                  <div class="text-h3 text-bold">{{actividad[0].titulo}}</div>
-                  <div class="text-h5 text-right" style="width: 900px;">{{actividad[0].descriccion}}</div>
+                <div class="column items-end absolute-bottom q-pa-md">
+                  <div class="text-h4 text-bold">{{actividad[0].titulo}}</div>
                 </div>
               </div>
             </q-img>
@@ -25,7 +24,7 @@
             <div class="row full-height">
               <div class="col column justify-center" style="min-width: 300px;">
                 <div class="row items-center full-width q-mb-lg">
-                  <div class="text-h5 text-white full-width text-bold bg-primary q-pa-md" style="border-radius: 10px;">{{hoja.pregunta}}</div>
+                  <div class="text-subtitle1 text-white full-width text-bold bg-primary q-pa-md" style="border-radius: 10px;">{{hoja.pregunta}}</div>
                 </div>
                 <div class="row items-center full-width">
                   <div class="text-h5 text-white full-width text-bold bg-primary q-pa-md" style="border-radius: 10px;">
@@ -37,7 +36,7 @@
               </div>
               <div class="col-6 q-pl-lg column items-center">
                 <div class="col row items-center full-width" v-for="element in hoja.respuestas" :key="element.id">
-                  <q-radio size="75px" :color="element.id === hoja.correcto &&  submit ? 'positive' : submit ? 'negative' : 'primary'" class="text-h5 text-primary text-bold full-width items-center" v-model="res" :val="element" :label="element.name"/>
+                  <q-radio size="50px" :color="element.id === hoja.correcto &&  submit ? 'positive' : submit ? 'negative' : 'primary'" class="text-h5 text-primary text-bold full-width items-center" v-model="res" :val="element" :label="element.name"/>
                 </div>
               </div>
             </div>

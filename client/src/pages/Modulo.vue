@@ -1,18 +1,18 @@
 <template>
   <div>
-    <q-header class="bg-white">
-      <div class="column items-center q-pt-md q-px-md">
-        <q-card style="border-radius: 24px; width: 100%; height: 200px;">
+    <q-header class="bg-white q-pt-md q-px-md">
+      <div class="column items-center">
+        <q-card style="border-radius: 15px; width: 100%; height: 150px;">
           <q-img :src="modulo[0].src" class="full-height">
             <div class="absolute-full row">
-              <div>
-                <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
-                <div class="col q-pl-md">
-                  <q-img src="esquinas.png" style="width: 225px"/>
+              <div class="q-pa-xs">
+                <div class="text-h3 text-bold q-mb-sm">{{modulo[0].name}}</div>
+                <div class="col">
+                  <q-img src="esquinas.png" style="width: 50px"/>
                 </div>
               </div>
-              <div class="column items-end absolute-bottom q-pa-lg">
-                <div class="text-h3 text-bold">{{modulo[0].title}}</div>
+              <div class="column items-end absolute-bottom q-pa-md">
+                <div class="text-h4 text-bold">{{modulo[0].title}}</div>
                 <!-- <div class="text-h5">incidunt ut labore et dolore magna aliqua.</div>
                 <div class="text-h5">Ut enim ad veniam, quis nostrud</div> -->
               </div>
@@ -20,18 +20,18 @@
           </q-img>
         </q-card>
       </div>
-      <div class="q-px-md">
-        <div class="text-h5 text-black">Lista de actividades</div>
-        <div class="text-h5 text-secondary">Toca el modulo que te gustaria trabajar</div>
+      <div>
+        <div class="text-subtitle1 text-black">Lista de actividades</div>
+        <div class="text-subtitle1 text-secondary">Toca el modulo que te gustaria trabajar</div>
       </div>
     </q-header>
     <q-scroll-area horizontal class="window-height absolute-top">
-      <div class="row full-height items-center no-wrap q-px-md q-gutter-md" style="padding-top: 275px;">
-        <q-card style="border-radius: 10px; width: 350px; height: 90%;" clickable v-for="(actividad, index) in modulo[0].actividades" @click="ejecutarAccion(actividad, modulo[0].id)" :key="index">
+      <div class="row full-height items-center no-wrap q-pl-md" style="padding-top: 210px;">
+        <q-card class="q-mr-md" style="border-radius: 10px; width: 225px; height: 90%;" clickable v-for="(actividad, index) in modulo[0].actividades" @click="ejecutarAccion(actividad, modulo[0].id)" :key="index">
           <q-img :src="actividad.src" class="full-height">
             <div class="absolute-full">
               <div class="absolute-bottom">
-                <div class="text-h4 text-bold text-center q-py-md">{{actividad.name}}</div>
+                <div class="text-h6 text-bold text-center q-py-md">{{actividad.name}}</div>
               </div>
             </div>
           </q-img>
@@ -39,20 +39,20 @@
       </div>
     </q-scroll-area>
     <q-dialog v-model="vds" persistent>
-      <q-card style="border-radius: 24px;">
-        <q-carousel class="q-mx-xl q-mt-lg" v-model="slide" style="border-radius: 24px; height: auto;" infinite>
+      <q-card class="q-pa-md" style="border-radius: 24px;">
+        <q-carousel class="q-mx-md" v-model="slide" style="border-radius: 24px; height: auto;" infinite>
           <q-carousel-slide v-for="(video, index) in modulo[0].videos.sources" :key="index" :name="index + 1" class="q-pa-none">
             <div>
               <my-video :sources="video" :options="modulo[0].videos.options"/>
             </div>
           </q-carousel-slide>
         </q-carousel>
-        <div class="column items-center q-pt-md">
-          <q-rating v-model="slide" size="20px" color="primary" icon="radio_button_unchecked" icon-selected="circle" :max="modulo[0].videos.sources.length" readonly/>
+        <div class="column items-center q-py-sm">
+          <q-rating v-model="slide" size="15px" color="primary" icon="radio_button_unchecked" icon-selected="circle" :max="modulo[0].videos.sources.length" readonly/>
         </div>
-        <q-card-actions class="q-pb-lg" align="center">
-          <q-btn v-if="slide < modulo[0].videos.sources.length" class="q-pa-sm text-h6" color="primary" label="Siguiente" @click="sigiente()" no-caps style="width: 50%; border-radius: 10px;"/>
-          <q-btn v-else class="q-pa-sm text-h6" color="primary" label="Cerrar" v-close-popup no-caps style="width: 50%; border-radius: 10px;"/>
+        <q-card-actions align="center" class="q-pa-none">
+          <q-btn v-if="slide < modulo[0].videos.sources.length" class="q-pa-xs text-subtitle1 text-bold" color="primary" label="Siguiente" @click="sigiente()" no-caps style="width: 50%; border-radius: 10px;"/>
+          <q-btn v-else class="q-pa-xs text-subtitle1 text-bold" color="primary" label="Cerrar" v-close-popup no-caps style="width: 50%; border-radius: 10px;"/>
         </q-card-actions>
       </q-card>
     </q-dialog>
