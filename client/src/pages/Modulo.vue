@@ -30,7 +30,8 @@
         <q-card class="q-mr-md" style="border-radius: 10px; width: 225px; height: 90%;" clickable v-for="(actividad, index) in modulo[0].actividades" @click="ejecutarAccion(actividad, modulo[0].id)" :key="index">
           <q-img :src="actividad.src" class="full-height">
             <div class="absolute-full">
-              <div class="absolute-bottom">
+              <div class="absolute-bottom column items-center">
+                <q-img v-if="!actividad.visto && actividad.id !== 6" src="check.jpeg" style="width:50px; height:50px"/>
                 <div class="text-h6 text-bold text-center q-py-md">{{actividad.name}}</div>
               </div>
             </div>
@@ -105,6 +106,20 @@ export default {
   },
   methods: {
     ejecutarAccion (op, moduloid) {
+      if (!op.visto) {
+        const modulo = JSON.parse(localStorage.getItem('modulos'))
+        modulo.forEach(element => {
+          if (element.id === moduloid) {
+            element.actividades.forEach(v => {
+              if (v.id === op.id) {
+                v.visto = true
+              }
+            })
+          }
+        })
+        localStorage.setItem('modulos', JSON.stringify(modulo))
+        this.modulo = JSON.parse(localStorage.getItem('modulos')).filter(v => v.id.toString() === this.id)
+      }
       if (op.id === 1) {
         this.verVideos()
       }
