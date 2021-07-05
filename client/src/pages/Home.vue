@@ -23,10 +23,8 @@
               <div class="full-height row items-center">
                 <div class="text-h2 text-bold" style="transform: rotate(-90deg); margin-left: -125px">{{modulo.name.toUpperCase()}}</div>
               </div>
-              <div class="column items-end absolute-bottom q-pa-md">
-                <div class="text-h3 text-bold">Título</div>
-                <div>incidunt ut labore et dolore magna aliqua.</div>
-                <div>Ut enim ad veniam, quis nostrud</div>
+              <div class="row justify-end absolute-bottom q-pa-md">
+                <div class="text-h4 text-bold text-right">{{modulo.title}}</div>
               </div>
             </div>
           </q-img>
