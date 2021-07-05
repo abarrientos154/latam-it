@@ -8,13 +8,13 @@
               <div>
                 <div class="text-h2 text-bold q-pa-md">{{modulo[0].name}}</div>
                 <div class="col q-pl-md">
-                  <q-img src="pres.png" style="width: 225px"/>
+                  <q-img src="esquinas.png" style="width: 225px"/>
                 </div>
               </div>
               <div class="column items-end absolute-bottom q-pa-lg">
-                <div class="text-h3 text-bold">Título</div>
-                <div class="text-h5">incidunt ut labore et dolore magna aliqua.</div>
-                <div class="text-h5">Ut enim ad veniam, quis nostrud</div>
+                <div class="text-h3 text-bold">{{modulo[0].title}}</div>
+                <!-- <div class="text-h5">incidunt ut labore et dolore magna aliqua.</div>
+                <div class="text-h5">Ut enim ad veniam, quis nostrud</div> -->
               </div>
             </div>
           </q-img>
