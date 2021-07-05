@@ -1,10 +1,7 @@
 <template>
-  <div class="full-window column">
-    <div class="absolute-center full-width">
-      <q-img src="intro.gif" class="full-height">
-      </q-img>
-    </div>
-  </div>
+  <q-avatar square class="window-width window-height">
+    <q-img src="intro.gif" class="full-height"/>
+  </q-avatar>
 </template>
 
 <script>
@@ -37,7 +34,8 @@ export default {
             options: {
               autoplay: true,
               volume: 0.6
-            }
+            },
+            visto: true
           },
           actividades: [
             {
@@ -213,7 +211,8 @@ export default {
             options: {
               autoplay: true,
               volume: 0.1
-            }
+            },
+            visto: true
           },
           actividades: [
             {
@@ -385,7 +384,8 @@ export default {
             options: {
               autoplay: true,
               volume: 0.1
-            }
+            },
+            visto: true
           },
           actividades: [
             {
@@ -559,7 +559,8 @@ export default {
             options: {
               autoplay: true,
               volume: 0.6
-            }
+            },
+            visto: true
           },
           actividades: [
             {
@@ -726,7 +727,8 @@ export default {
             options: {
               autoplay: true,
               volume: 0.6
-            }
+            },
+            visto: true
           },
           actividades: [
             {
@@ -893,7 +895,8 @@ export default {
             options: {
               autoplay: true,
               volume: 0.6
-            }
+            },
+            visto: true
           },
           actividades: [
             {
