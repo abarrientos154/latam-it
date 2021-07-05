@@ -6,8 +6,8 @@
           <q-img src="latam-color.png" style="width: 150px"/>
         </div>
         <q-fab color="primary" icon="menu" direction="left">
-        <q-fab-action label="Salir" color="primary" @click="onClick" icon="logout" />
-        <q-fab-action label="Silenciar" color="primary" @click="onClick" icon="volume_off" />
+        <q-fab-action label="Salir" color="primary" @click="logout()" icon="logout" />
+        <q-fab-action label="Silenciar" color="primary" @click="mute()" icon="volume_off" />
       </q-fab>
         <!-- <q-btn size="20px" outline dense round color="black" icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/> -->
       </div>
@@ -21,7 +21,7 @@
  -->
     <q-scroll-area horizontal class="window-height absolute-top">
       <div class="row full-height no-wrap q-px-md q-gutter-md" style="padding-top: 110px;">
-        <q-card style="border-radius: 20px; width: 450px; height: 85%;" clickable v-for="(modulo, index) in modulos" :key="index" @click="modulo.id > 1 ? modulos[index - 1].statusCa && modulos[index - 1].statusEx ? $router.push('/modulo/' + modulo.id) : moduloEnable() : $router.push('/modulo/' + modulo.id)">
+        <q-card style="border-radius: 20px; width: 450px; height: 85%;" clickable v-for="(modulo, index) in modulos" :key="index" @click="modulo.id > 1 ? modulos[index - 1].statusCa && modulos[index - 1].statusEx ? accion(modulo.id) : moduloEnable() : accion(modulo.id)">
           <q-img :src="modulo.src" class="full-height">
             <div class="absolute-full row">
               <div class="full-height row items-center">
@@ -90,15 +90,31 @@ export default {
       info: null,
       modulos: [],
       leftDrawerOpen: false,
-      enable: false
+      enable: false,
+      infoo: null
     }
   },
   mounted () {
+    this.infoo = new Audio(require('../../public/musicafondo.mp3'))
+    // a.loop = true
+    console.log('pre')
+    this.infoo.play()
+    console.log(this.modulos)
     this.modulos = JSON.parse(localStorage.getItem('modulos'))
     this.info = JSON.parse(localStorage.getItem('infoHome'))
     console.log(this.modulos)
   },
   methods: {
+    accion (id) {
+      this.infoo.pause()
+      this.$router.push('/modulo/' + id)
+    },
+    logout () {
+      navigator.app.exitApp()
+    },
+    mute () {
+      this.infoo.pause()
+    },
     moduloEnable () {
       this.enable = true
     }
