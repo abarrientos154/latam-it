@@ -556,7 +556,7 @@ export default {
           id: 1,
           name: 'Módulo 01',
           src: 'modulo1.png',
-          titulo: '',
+          title: 'Grupo versus Equipo',
           descriccion: '',
           statusCa: false,
           statusEx: false,
@@ -588,7 +588,7 @@ export default {
               id: 2,
               name: 'Glosario',
               src: 'glosario.png',
-              pdf: '.pdf',
+              pdf: 'Glosario1.pdf',
               visto: false
             },
             {
@@ -720,7 +720,7 @@ export default {
               id: 5,
               name: 'Ver resumen',
               src: 'resumen.png',
-              pdf: '.pdf',
+              pdf: 'Resumen1.pdf',
               visto: false
             },
             {
@@ -734,18 +734,14 @@ export default {
           id: 2,
           name: 'Módulo 02',
           src: 'modulo2.png',
-          titulo: '',
+          title: 'Equipos Efectivos en las Organizaciones de trabajo',
           descriccion: '',
           statusCa: false,
           statusEx: false,
           videos: {
             sources: [
               [{
-                src: 'video1.mp4',
-                type: 'video/mp4'
-              }],
-              [{
-                src: 'video2.mp4',
+                src: 'video3.mp4',
                 type: 'video/mp4'
               }]
             ],
@@ -766,7 +762,7 @@ export default {
               id: 2,
               name: 'Glosario',
               src: 'glosario.png',
-              pdf: '.pdf',
+              pdf: 'Glosario2.pdf',
               visto: false
             },
             {
@@ -898,7 +894,7 @@ export default {
               id: 5,
               name: 'Ver resumen',
               src: 'resumen.png',
-              pdf: '.pdf',
+              pdf: 'Resumen2.pdf',
               visto: false
             },
             {
@@ -912,18 +908,14 @@ export default {
           id: 3,
           name: 'Módulo 03',
           src: 'bg.jpg',
-          titulo: '',
+          title: 'Fase de incomodidad',
           descriccion: '',
           statusCa: false,
           statusEx: false,
           videos: {
             sources: [
               [{
-                src: 'video1.mp4',
-                type: 'video/mp4'
-              }],
-              [{
-                src: 'video2.mp4',
+                src: 'video4.mp4',
                 type: 'video/mp4'
               }]
             ],
@@ -944,7 +936,7 @@ export default {
               id: 2,
               name: 'Glosario',
               src: 'glosario.png',
-              pdf: '.pdf',
+              pdf: 'Glosario3.pdf',
               visto: false
             },
             {
@@ -1043,7 +1035,7 @@ export default {
               id: 5,
               name: 'Ver resumen',
               src: 'resumen.png',
-              pdf: '.pdf',
+              pdf: 'Resumen3.pdf',
               visto: false
             },
             {
