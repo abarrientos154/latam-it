@@ -20,6 +20,7 @@ export default {
           descriccion: '',
           statusCa: false,
           statusEx: false,
+          infoEx: true,
           videos: {
             sources: [
               [{
@@ -560,6 +561,7 @@ export default {
           descriccion: '',
           statusCa: false,
           statusEx: false,
+          infoEx: true,
           videos: {
             sources: [
               [{
