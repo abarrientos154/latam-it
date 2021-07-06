@@ -112,6 +112,18 @@
           <div class="text-center text-subtitle1 text-bold">{{slide === hojas.length ? 'Felicidades, haz completado con éxito.' : 'Te estamos redirecionando a la siguientes preguntas.'}}</div>
         </q-card>
       </q-dialog>
+      <q-dialog full-width v-model="info">
+        <q-card style="border-radius: 24px;" class="q-pa-md column items-center">
+          <div style="margin-bottom: -75px">
+            <div class="text-subtitle1">Debes tomar y deslizar el cocepto</div>
+            <div class="text-subtitle1 text-center">al lugar donde le corresponde</div>
+          </div>
+          <div class="column items-center justify-center q-mb-sm">
+            <q-img src="draganddrop.png" style="width: 300px"/>
+          </div>
+          <div class="text-subtitle2" style="margin-top: -75px">luego, haz click en Validar y espera la respuesta.</div>
+        </q-card>
+      </q-dialog>
     </div>
   </div>
 </template>
@@ -135,6 +147,7 @@ export default {
       verVal: false,
       error: false,
       submit: false,
+      info: false,
       valError: [],
       res: null,
       timer: '',
@@ -144,6 +157,9 @@ export default {
   },
   mounted () {
     this.getmodulo()
+    if (this.modulo[0].id === 1) {
+      this.info = !this.modulo[0].statusEx
+    }
   },
   methods: {
     getmodulo () {
@@ -157,6 +173,7 @@ export default {
         } else if (this.actividad[0].id === 4) {
           this.hojas = this.actividad[0].hojas
           this.res = this.hojas[this.slide - 1].preguntas
+          console.log(this.info)
         }
       }
     },
