@@ -163,7 +163,7 @@ export default {
   },
   mounted () {
     this.getmodulo()
-    if (this.modulo[0].id === 1) {
+    if (this.modulo[0].id === 1 && this.actividad[0].id === 4) {
       this.info = !this.modulo[0].statusEx
     }
   },
