@@ -31,7 +31,7 @@
           <q-img :src="actividad.src" class="full-height">
             <div class="absolute-full">
               <div class="absolute-bottom column items-center">
-                <q-img v-if="!actividad.visto && actividad.id !== 6" src="check.jpeg" style="width:50px; height:50px"/>
+                <q-img v-if="actividad.visto && actividad.id !== 6" src="check.png" style="width:50px; height:50px"/>
                 <div class="text-h6 text-bold text-center q-py-md">{{actividad.name}}</div>
               </div>
             </div>

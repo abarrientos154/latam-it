@@ -7,7 +7,9 @@
         </div>
         <q-fab color="primary" icon="menu" direction="left">
         <q-fab-action label="Salir" color="primary" @click="logout()" icon="logout" />
-        <q-fab-action label="Silenciar" color="primary" @click="mute()" icon="volume_off" />
+        <q-fab-action v-if="sonando" label="Silenciar" color="primary" @click="mute(false)" icon="volume_off" />
+        <q-fab-action v-else label="Sonar" color="primary" @click="mute(true)" icon="volume_up" />
+
       </q-fab>
         <!-- <q-btn size="20px" outline dense round color="black" icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/> -->
       </div>
@@ -91,7 +93,8 @@ export default {
       modulos: [],
       leftDrawerOpen: false,
       enable: false,
-      infoo: null
+      infoo: null,
+      sonando: true
     }
   },
   mounted () {
@@ -112,8 +115,14 @@ export default {
     logout () {
       navigator.app.exitApp()
     },
-    mute () {
-      this.infoo.pause()
+    mute (param) {
+      if (param) {
+        this.sonando = !this.sonando
+        this.infoo.play()
+      } else {
+        this.sonando = !this.sonando
+        this.infoo.pause()
+      }
     },
     moduloEnable () {
       this.enable = true

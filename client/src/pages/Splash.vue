@@ -42,7 +42,7 @@ export default {
               id: 1,
               name: 'Ver videos',
               src: 'ver video.png',
-              visto: false
+              visto: true
             },
             {
               id: 2,
@@ -216,14 +216,15 @@ export default {
             options: {
               autoplay: true,
               volume: 0.6
-            }
+            },
+            visto: true
           },
           actividades: [
             {
               id: 1,
               name: 'Ver videos',
               src: 'ver video.png',
-              visto: false
+              visto: true
             },
             {
               id: 2,
@@ -393,14 +394,15 @@ export default {
             options: {
               autoplay: true,
               volume: 0.6
-            }
+            },
+            visto: true
           },
           actividades: [
             {
               id: 1,
               name: 'Ver videos',
               src: 'ver video.png',
-              visto: false
+              visto: true
             },
             {
               id: 2,
@@ -1025,8 +1027,12 @@ export default {
     }
   },
   mounted () {
-    localStorage.setItem('modulos', JSON.stringify(this.modulos))
-    localStorage.setItem('infoHome', JSON.stringify(this.info))
+    const existe = JSON.parse(localStorage.getItem('modulos'))
+    console.log(existe)
+    if (!existe) {
+      localStorage.setItem('modulos', JSON.stringify(this.modulos))
+      localStorage.setItem('infoHome', JSON.stringify(this.info))
+    }
   },
   methods: {
     ejecutar () {

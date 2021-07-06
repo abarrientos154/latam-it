@@ -109,7 +109,7 @@
           <div class="column items-center justify-center q-mb-sm">
             <q-img src="completo.png" style="width: 100px"/>
           </div>
-          <div class="text-center text-subtitle1 text-bold">{{slide === hojas.length ? 'Felicidades, haz completado el examen con éxito.' : 'Te estamos redirecionando a la siguientes preguntas.'}}</div>
+          <div class="text-center text-subtitle1 text-bold">{{slide === hojas.length ? 'Felicidades, haz completado con éxito.' : 'Te estamos redirecionando a la siguientes preguntas.'}}</div>
         </q-card>
       </q-dialog>
     </div>
