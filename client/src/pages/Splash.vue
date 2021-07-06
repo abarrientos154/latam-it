@@ -581,13 +581,15 @@ export default {
             {
               id: 1,
               name: 'Ver videos',
-              src: 'ver video.png'
+              src: 'ver video.png',
+              visto: true
             },
             {
               id: 2,
               name: 'Glosario',
               src: 'glosario.png',
-              pdf: '.pdf'
+              pdf: '.pdf',
+              visto: false
             },
             {
               id: 3,
@@ -636,7 +638,8 @@ export default {
                   ],
                   correcto: 2
                 }
-              ]
+              ],
+              visto: false
             },
             {
               id: 4,
@@ -710,13 +713,20 @@ export default {
                   ],
                   correcto: [1, 2, 3]
                 }
-              ]
+              ],
+              visto: false
             },
             {
               id: 5,
               name: 'Ver resumen',
               src: 'resumen.png',
-              pdf: '.pdf'
+              pdf: '.pdf',
+              visto: false
+            },
+            {
+              id: 6,
+              name: 'Ir al Menu',
+              src: 'Volver al inicio.png'
             }
           ]
         },
@@ -749,13 +759,15 @@ export default {
             {
               id: 1,
               name: 'Ver videos',
-              src: 'ver video.png'
+              src: 'ver video.png',
+              visto: true
             },
             {
               id: 2,
               name: 'Glosario',
               src: 'glosario.png',
-              pdf: '.pdf'
+              pdf: '.pdf',
+              visto: false
             },
             {
               id: 3,
@@ -804,7 +816,8 @@ export default {
                   ],
                   correcto: 2
                 }
-              ]
+              ],
+              visto: false
             },
             {
               id: 4,
@@ -878,13 +891,20 @@ export default {
                   ],
                   correcto: [1, 2, 3]
                 }
-              ]
+              ],
+              visto: false
             },
             {
               id: 5,
               name: 'Ver resumen',
               src: 'resumen.png',
-              pdf: '.pdf'
+              pdf: '.pdf',
+              visto: false
+            },
+            {
+              id: 6,
+              name: 'Ir al Menu',
+              src: 'Volver al inicio.png'
             }
           ]
         },
@@ -917,13 +937,15 @@ export default {
             {
               id: 1,
               name: 'Ver videos',
-              src: 'ver video.png'
+              src: 'ver video.png',
+              visto: true
             },
             {
               id: 2,
               name: 'Glosario',
               src: 'glosario.png',
-              pdf: '.pdf'
+              pdf: '.pdf',
+              visto: false
             },
             {
               id: 3,
@@ -972,7 +994,8 @@ export default {
                   ],
                   correcto: 1
                 }
-              ]
+              ],
+              visto: false
             },
             {
               id: 4,
@@ -1013,13 +1036,20 @@ export default {
                   ],
                   correcto: [1, 2, 3]
                 }
-              ]
+              ],
+              visto: false
             },
             {
               id: 5,
               name: 'Ver resumen',
               src: 'resumen.png',
-              pdf: '.pdf'
+              pdf: '.pdf',
+              visto: false
+            },
+            {
+              id: 6,
+              name: 'Ir al Menu',
+              src: 'Volver al inicio.png'
             }
           ]
         }

@@ -5,14 +5,17 @@
         <div class="column items-center">
           <q-card style="border-radius: 15px; width: 100%; height: 150px;">
             <q-img :src="actividad[0].src" class="full-height">
-              <div class="absolute-full row">
+              <div class="absolute-full row justify-between">
                 <div class="q-pa-xs">
                   <div class="text-h3 text-bold q-mb-sm">{{modulo[0].name}}</div>
                   <div class="col">
                     <q-img src="esquinas.png" style="width: 50px"/>
                   </div>
                 </div>
-                <div class="column items-end absolute-bottom q-pa-md">
+                <div class="column items-end justify-between">
+                  <div>
+                    <q-btn color="primary" icon="arrow_back" round @click="$router.go(-1)" />
+                  </div>
                   <div class="text-h4 text-bold">{{actividad[0].titulo}}</div>
                 </div>
               </div>
@@ -51,14 +54,17 @@
         <div class="column items-center">
           <q-card style="border-radius: 15px; width: 100%; height: 150px;">
             <q-img :src="actividad[0].src" class="full-height">
-              <div class="absolute-full row">
+              <div class="absolute-full row justify-between">
                 <div class="q-pa-xs">
                   <div class="text-h3 text-bold q-mb-sm">{{modulo[0].name}}</div>
                   <div class="col">
                     <q-img src="esquinas.png" style="width: 50px"/>
                   </div>
                 </div>
-                <div class="column items-end absolute-bottom q-pa-md">
+                <div class="column items-end justify-between">
+                  <div>
+                    <q-btn color="primary" icon="arrow_back" round @click="$router.go(-1)" />
+                  </div>
                   <div class="text-h4 text-bold">{{actividad[0].titulo}}</div>
                 </div>
               </div>
